@@ -1,0 +1,4 @@
+{
+  "character":"./resource/storage/character.db",
+  "lineup": "./resource/storage/lineup"
+}
