@@ -1,7 +1,7 @@
 import os
 import pickle
 import json
-from core import log
+from lib import logger
 
 
 def __create_file(path):
@@ -10,20 +10,18 @@ def __create_file(path):
         log_info = ' create ' + path
     except:
         log_info = ' fail to create ' + path
-    print(555)
-    print(log_info)
-    log(log_info)
+    logger.info(log_info)
 
 
 def __open_file(path, open_type):
-    if not os.path.exists(path):
-        __create_file(path)
     try:
+        if not os.path.exists(path):
+            __create_file(path)
         f = open(path, open_type)
         return f
     except:
         log_info = ' fail to open ' + path
-        log(log_info)
+        logger.info(log_info)
     return None
 
 

@@ -13,32 +13,105 @@
         8. 为了更好的鲁棒性 尽量使得每个字段中的值简单化是一个明智的选择
 """
 import collections
-from core import log
-from core import read_all
+from core.filePipe.pipe import read_all
+from lib import logger
+import os
+from functools import wraps
 
 
-class DB:
-    def __init__(self, file_path, name='metadata'):
+def is_empty_table(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        table = args[0]
+        if table.data is None:
+            logger.info("table:{} 为空".format(table.name))
+            return 0
+        else:
+            return func(*args, **kwargs)
+
+    return wrapper
+
+
+class Table:
+    def __init__(self, path, name='metadata'):
         """
         :param file_path: 需要读取的 .db 文件路径
         """
-        data_file = read_all(file_path).split('\r\n')
+        # self.path = path
+        self.name = name
+        data_file = read_all(path).split('\r\n')
         self.fields = data_file[0].split(':')
-        metadata = collections.namedtuple(name, self.fields)
-        self.data = [metadata(*data_line.split(':')) for data_line in data_file[1:]]
+        if self.fields == ['']:
+            logger.info("读取到空表 path:{}".format(path))
+            self.data = None
+        else:
+            metadata = collections.namedtuple(name, self.fields)
+            data_lines = [line.split(":") for line in data_file[1:]]
+            self.data = [metadata(*data_line) for data_line in data_lines if
+                         len(self.fields) == len(data_line)]
 
-    def query(self, filed, value):
+    @is_empty_table
+    def create(self, filed, value):
+        pass
+
+    @is_empty_table
+    def update(self, filed, value):
+        pass
+
+    @is_empty_table
+    def retrieve(self, filed, value):
         if filed not in self.fields:
-            log('查询不存在的字段')
+            logger.warning("在字段 {} 中查询不存在的字段: {}".format(self.fields, filed))
             return None
         else:
-            many = []
-            for one in self.data:
-                if value == one.__getattribute__(filed):
-                    many.append(one)
-            if many is []:
-                log('未查询到匹配的数据')
+            many = [one for one in self.data if one.__getattribute__(filed) == value]
+            if not many:
+                logger.info("字段 {} 中未查询到数据: {}".format(filed, value))
             return many
+
+    @is_empty_table
+    def delete(self, filed, value):
+        pass
 
     def all(self):
         return self.data
+
+
+class DB:
+    type = {
+        1: "DB",
+        2: "TABLE"
+    }
+
+    def __init__(self, path, suffix, default_db_name="default_db"):
+        """
+        :param config: 查看lib.config
+        """
+        self.__path = path
+        self.__suffix = suffix
+        self.__default_db_name = default_db_name
+        self.dbs = {}
+        self.__load_data()
+
+    def __load_data(self, first=False):
+        self.dbs[self.__default_db_name] = {}
+        for item in os.listdir(self.__path):
+            path = os.path.join(self.__path, item)
+            if os.path.isdir(path):
+                self.dbs[item] = DB(path, self.__suffix, default_db_name=item)
+            else:
+                name, suffix = os.path.splitext(item)
+                if suffix == self.__suffix:
+                    self.dbs[self.__default_db_name][name] = Table(path, name=name)
+
+    def create(self, table_name, filed, value):
+        pass
+
+    def update(self, table_name, filed, value):
+        pass
+
+    def retrieve(self, table_name, filed, value):
+        pass
+
+    def delete(self, table_name, filed, value):
+        pass

@@ -1,10 +1,7 @@
-import numpy as np
 import cv2
+import numpy as np
 from PIL import Image, ImageGrab
-from skimage.measure import compare_ssim
 from skimage.metrics import structural_similarity
-from modules.config.config import defaultConfig
-from modules.log.log import log
 
 
 def getImage(path):

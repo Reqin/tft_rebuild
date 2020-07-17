@@ -1,0 +1,15 @@
+{
+  "log": {
+    "path": "conf/log.json",
+    "logger_name": "my_logger"
+  },
+  "engine": {
+    "path": "conf/engine.json"
+  },
+  "gui": {
+    "path": "conf/gui.json"
+  },
+  "db": {
+    "path": "conf/db.json"
+  }
+}

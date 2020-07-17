@@ -1,10 +1,13 @@
-from modules.config.config import defaultConfig as config
+from lib import config_init, config_builder
+from core import DB
 
-def setState(state):
-    with open(config['engine.path_state'],'w') as f:
+
+def set_state(state):
+    with open(config['engine.path_state'], 'w') as f:
         f.write(str(state))
 
-def getState():
-    with open(config['engine.path_state'],'rb') as f:
+
+def get_state():
+    with open(config['engine.path_state'], 'rb') as f:
         state = f.readline().decode()
         return int(state)

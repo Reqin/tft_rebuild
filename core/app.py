@@ -1,24 +1,26 @@
 # coding:utf8
-from modules.config.config import defaultConfig
-from modules.win.MainGui import MainGui
-from modules.engine.overseer import overseer
+import os
+
+
+from lib import config_init, config_builder
+from core.win.MainGui import MainGui
+from core.engine.overseer import overseer
 from threading import Thread
-from modules.win.LoginGui import login
+from core.win.LoginGui import login
 import time
 import sys
 import queue
 
 
-def main():
-
-    loginState = queue.Queue(maxsize=1)
+def start():
+    login_state = queue.Queue(maxsize=1)
     accessState = queue.Queue(maxsize=1)
-    taskLogin = Thread(target=login,args=(loginState,accessState))
+    taskLogin = Thread(target=login, args=(loginState, accessState))
     taskLogin.setDaemon(True)
     taskLogin.start()
     while True:
         time.sleep(0.1)
-        # 
+        #
         if not taskLogin.is_alive():
             sys.exit(0)
         if loginState.empty():
@@ -44,7 +46,7 @@ def main():
         time.sleep(0.1)
         if mainGui.is_alive():
             break
-    
+
     my_overseer = Thread(target=overseer)
     my_overseer.setDaemon(True)
     my_overseer.start()
@@ -53,4 +55,3 @@ def main():
         time.sleep(0.5)
         if not mainGui.is_alive():
             sys.exit(0)
-

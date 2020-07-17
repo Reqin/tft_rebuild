@@ -1,24 +1,16 @@
 # coding:utf8
 import os
 import time
-import copy
+import PyHook3
+import pythoncom
 import tkinter as tk
-import pyautogui as pag
-import tkinter.font as tf
 import tkinter.filedialog as filedialog
 import tkinter.messagebox as mgb
-from modules.image.image import cv2PIL
-from PIL import ImageTk, Image
-from pynput.keyboard import Listener
+from core.image.image import cv2PIL
+from PIL import ImageTk
 from threading import Thread
-from modules.config.config import defaultConfig as config
-from modules.state.state import getState, setState
-from modules.filePipe.pipe import pklDump
-from modules.log.log import log
-from modules.win.ScrollFrame import ScrollableFrame
-from modules.creations.Character import Character, loadCharacterHandle, dumpCharacterHandle
-from modules.creations.Equipment import Equipment, loadEquipmentsHandle
-from modules.creations.lineup import exportLineup, importLineup, getLineupsName
+from core.state.state import get_state, set_state
+from core.win.ScrollFrame import ScrollableFrame
 
 
 def tellEngine(charactersHandle):
@@ -105,6 +97,7 @@ class MainGui(tk.Tk):
             if event.widget != self.winEquipmentsList:
                 return
             self.hideWin(self.winEquipmentsList)
+
         self.winEquipmentsList.bind("<Leave>", ckthwe)
         # 窗口构建
         self.buildWinMain()
@@ -122,7 +115,7 @@ class MainGui(tk.Tk):
         geo_conf = str(self.x) + 'x' + str(self.y)
         self.geometry(geo_conf)
         geo_conf = '+' + str(config['gui.default.win_main.migration.x']) + \
-            '+' + str(config['gui.default.win_main.migration.y'])
+                   '+' + str(config['gui.default.win_main.migration.y'])
         self.geometry(geo_conf)
         self.resizable(width=config['gui.default.win_main.resizeble.x'],
                        height=config['gui.default.win_main.resizeble.y'])
@@ -272,7 +265,7 @@ class MainGui(tk.Tk):
         winTemporaryLineup.geometry(gconf)
         # 窗口偏移
         gconf = "+" + str(config["gui.default.win_temporary_lineup.migration.x"]) + \
-            "+" + str(config["gui.default.win_temporary_lineup.migration.y"])
+                "+" + str(config["gui.default.win_temporary_lineup.migration.y"])
         winTemporaryLineup.geometry(gconf)
         winTemporaryLineup.resizable(width=False, height=False)
         self.winTemporaryLineup.grid_propagate(0)
@@ -328,11 +321,13 @@ class MainGui(tk.Tk):
         self.temporaryLineupItems[character.name] = itemFrame
         itemFrame.grid_propagate(0)
         itemFrame.grid(pady=2)
+
         # 渲染坐标
 
         def next(y=[0]):
             y[0] = y[0] + 1
             return y[0]
+
         # 角色名
         state = self.charactersState[self.allCharactersName.index(
             character.name)]
@@ -385,6 +380,7 @@ class MainGui(tk.Tk):
                     "location": location
                 }
                 self.showWinEquipmentsList()
+
             equipmentItem.bind("<ButtonRelease-1>", func)
             equipmentItem.grid(
                 row=0,
@@ -431,6 +427,7 @@ class MainGui(tk.Tk):
                 row=x,
                 column=y
             )
+
             # self.focus = {
             #         "equipmetItem": item,
             #         "characterName": name,
@@ -444,13 +441,14 @@ class MainGui(tk.Tk):
                     newEquipment, self.focus["location"])
                 if state:
                     self.focus["equipmetItem"]["image"] = equipmentButton["image"]
+
             button.bind("<ButtonRelease-1>", replaceEquipment)
 
         self.hideWin(winEquipmentsList)
 
     def showWinEquipmentsList(self):
         self.showWin(self.winEquipmentsList, [
-                     pag.position()[0]-5, pag.position()[1]-5])
+            pag.position()[0] - 5, pag.position()[1] - 5])
 
     def showWin(self, win, migration=()):
         if migration != ():
@@ -475,6 +473,7 @@ class MainGui(tk.Tk):
                             self.allCharactersCharacter.resource[name], flag=True)
                     break
             self.flag_ws = True
+
         task = Thread(target=func)
         task.setDaemon(True)
         task.start()
@@ -497,6 +496,7 @@ class MainGui(tk.Tk):
                                 self.allCharactersCharacter.resource[name], flag=False)
                     break
             self.flag_ws = True
+
         task = Thread(target=func)
         task.setDaemon(True)
         task.start()
@@ -547,6 +547,7 @@ class MainGui(tk.Tk):
         temporaryLineupCharacter = importLineup(file_path)
         if temporaryLineupCharacter:
             self.unselectAll()
+
             def selectLineupCharacters():
                 while True:
                     if self.flag_ws is not True:
@@ -556,6 +557,7 @@ class MainGui(tk.Tk):
                         for character in temporaryLineupCharacter.resource.values():
                             self.select(character, flag=True)
                         break
+
             taskSLC = Thread(target=selectLineupCharacters)
             taskSLC.setDaemon(True)
             taskSLC.start()
@@ -575,13 +577,16 @@ class MainGui(tk.Tk):
         if file_path[-4:] != '.pkl':
             file_path = file_path + '.pkl'
         if not exportLineup(self.temporaryLineupCharacter, file_path):
-            mgb.showwarning("警告","导出阵容文件失败")
+            mgb.showwarning("警告", "导出阵容文件失败")
 
     # 键盘事件开始
     def listenKeyboard(self):
         def ifDel():
-            with Listener(on_press=self.keyBoardEvent) as listener:
-                listener.join()
+            hm = PyHook3.HookManager()
+            hm.KeyDown = self.keyBoardEvent
+            hm.HookKeyboard()
+            pythoncom.PumpMessages()
+
         t1 = Thread(target=ifDel)
         t1.setDaemon(True)
         t1.start()
@@ -596,6 +601,7 @@ class MainGui(tk.Tk):
             self.selectAll()
         if str(key) == 'Key.f11':
             self.topDown()
+
     # 键盘事件结束
 
     def select(self, character, state=None, flag=None):
