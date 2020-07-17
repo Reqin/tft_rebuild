@@ -11,5 +11,14 @@
   },
   "db": {
     "path": "conf/db.json"
+  },
+  "user": {
+    "path": "conf/user.json"
+  },
+  "game_component": {
+    "path": "conf/game_component.json"
+  },
+  "state": {
+    "path": "conf/state.json"
   }
 }

@@ -1,15 +1,12 @@
-from modules.winApi.winApi import getWinCap, getWinHandle, getWinLoc, mouseLeftClick
-from modules.config.config import default_config as config
-from modules.image.image import imgCompare
-from modules.creations.Character import loadCharacterHandle
+from core.winApi.winApi import get_win_cap, get_win_handle, get_win_pos, mouse_left_click
+from core.image.image import imgCompare
 import time
-from modules.state.state import getState
-from modules.log.log import log
-from modules.filePipe.pipe import pkl_load
+from core.state.state import get_state
+from lib import logger
 
 
 def getCandidates(handle):
-    winCap = getWinCap(handle)
+    winCap = get_win_cap(handle)
     if winCap is None:
         return None
     num = config[config["engine.default"]]["num"]
@@ -37,15 +34,15 @@ def getTargets():
 
 
 def shot(i, handle):
-    loc = getWinLoc(handle)
+    loc = get_win_pos(handle)
     if loc == None:
         return None
     x = config[config["engine.default"]]["nw_relative_center"][0][i] + loc[0]
     y = config[config["engine.default"]]["nw_relative_center"][1][i] + loc[1]
-    mouseLeftClick(x, y)
+    mouse_left_click(x, y)
 
 
-from modules.image.image import PIL2cv
+from core.image.image import PIL2cv
 
 
 def doIt(handle, characterHandle):
@@ -70,7 +67,7 @@ def doIt(handle, characterHandle):
 def adjustWindow(handle):
     return None
     # TODO
-    # (x1, y1, x2, y2) = getWinLoc(handle)
+    # (x1, y1, x2, y2) = get_win_pos(handle)
     # w = x2 - x1
     # h = y2 - y1
     # if w > 1600 or h > 900:
@@ -80,7 +77,7 @@ def adjustWindow(handle):
 
 def worker():
     characterHandle = loadCharacterHandle(config["resource.path_characters"])
-    handle = getWinHandle(config["engine.target_window"])
+    handle = get_win_handle(config["engine.target_window"])
     print(666)
     while True:
         time.sleep(0.01)
@@ -89,7 +86,7 @@ def worker():
         if not handle:
             log(" 没有检测到目标窗口 ")
             time.sleep(3)
-            handle = getWinHandle(config["engine.target_window"])
+            handle = get_win_handle(config["engine.target_window"])
         else:
             flag = doIt(handle, characterHandle)
             if not flag:

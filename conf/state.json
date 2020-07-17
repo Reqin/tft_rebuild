@@ -1,0 +1,8 @@
+{
+  "gui": {
+    "type": "TABLE",
+    "index": "default.state",
+    "major_key": "name",
+    "name": "gui"
+  }
+}

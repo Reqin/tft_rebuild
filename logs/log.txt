@@ -298,3 +298,1059 @@
 [INFO      ] - 2020-07-17 08:55:17,976 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
 [INFO      ] - 2020-07-17 08:55:17,992 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\test.db
 [INFO      ] - 2020-07-17 08:55:17,992 dblite.py  module:dblite  27  func:wrapper  table:test 为空
+[INFO      ] - 2020-07-17 10:56:13,784 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 10:56:13,784 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 10:56:13,784 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 10:56:13,800 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\test.db
+[INFO      ] - 2020-07-17 10:59:36,348 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 10:59:36,349 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 10:59:36,350 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 10:59:36,351 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\test.db
+[INFO      ] - 2020-07-17 10:59:49,889 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 10:59:49,890 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 10:59:49,890 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:00:13,535 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:00:13,535 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:00:13,536 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:02:03,980 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:02:03,980 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:02:03,981 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:02:36,191 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:02:36,192 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:02:36,193 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:03:23,252 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:03:23,253 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:03:23,253 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:05:40,028 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:05:40,029 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:05:40,029 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:05:58,711 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:05:58,712 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:05:58,713 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:07:16,557 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:07:16,557 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:07:16,558 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:07:40,544 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:07:40,545 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:07:40,545 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:07:53,108 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:07:53,109 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:07:53,109 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:08:03,551 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:08:03,551 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:08:03,552 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:08:35,769 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:08:35,770 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:08:35,770 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:09:02,505 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:09:02,506 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:09:02,507 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:09:24,704 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:09:24,704 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:09:24,705 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:10:31,768 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:10:31,768 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:10:31,769 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:10:41,921 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:10:41,921 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:10:41,922 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:12:15,758 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:12:15,759 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:12:15,760 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:12:32,681 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:12:32,682 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:12:32,683 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:14:40,578 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:14:40,579 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:14:40,579 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:15:39,481 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:15:39,482 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:15:39,482 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:19:23,405 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:19:23,406 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:19:23,406 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:22:48,755 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:22:48,756 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:22:48,757 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:25:18,289 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:25:18,290 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:25:18,290 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 11:25:18,291 dblite.py  module:dblite  90  func:wrapper  不存在的数据表索引:default.test
+[INFO      ] - 2020-07-17 11:25:50,034 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:25:50,034 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:25:50,035 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 11:25:50,035 dblite.py  module:dblite  91  func:wrapper  不存在的数据表索引:default.test
+[INFO      ] - 2020-07-17 11:26:13,805 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:26:13,806 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:26:13,806 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 11:26:13,812 dblite.py  module:dblite  92  func:wrapper  不存在的数据表索引:default.test
+[INFO      ] - 2020-07-17 11:26:23,520 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:26:23,521 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:26:23,521 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 11:26:23,522 dblite.py  module:dblite  92  func:wrapper  不存在的数据表索引:default.test
+[INFO      ] - 2020-07-17 11:26:32,764 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:26:32,764 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:26:32,765 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:27:01,885 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:27:01,886 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:27:01,886 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:27:52,693 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:27:52,694 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:27:52,694 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:28:27,425 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:28:27,426 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:28:27,427 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:29:10,465 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:29:10,465 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:29:10,466 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:29:43,070 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:29:43,071 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:29:43,071 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:29:51,887 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:29:51,888 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:29:51,888 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:30:49,343 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:30:49,344 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:30:49,344 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:35:06,521 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:35:06,521 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:35:06,522 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:35:25,987 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:35:25,988 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:35:25,988 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:41:56,161 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:41:56,162 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:41:56,162 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:42:46,464 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:42:46,465 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:42:46,465 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:42:46,466 dblite.py  module:dblite  103  func:wrapper  不存在的数据表索引:default.tesp
+[INFO      ] - 2020-07-17 11:43:36,101 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:43:36,102 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:43:36,102 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:43:36,103 dblite.py  module:dblite  103  func:wrapper  不存在的数据表索引:default.tesp
+[INFO      ] - 2020-07-17 11:43:51,737 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:43:51,738 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:43:51,739 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:46:03,045 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:46:03,046 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:46:03,046 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:46:27,419 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:46:27,419 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:46:27,420 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:46:27,420 dblite.py  module:dblite  105  func:wrapper  不存在的数据表索引:default.test5
+[INFO      ] - 2020-07-17 11:46:44,061 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:46:44,062 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:46:44,062 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:46:44,063 dblite.py  module:dblite  108  func:wrapper  不存在的数据表索引:default.test5
+[INFO      ] - 2020-07-17 11:46:58,136 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:46:58,136 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:46:58,137 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 11:47:46,139 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:47:46,139 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:47:46,140 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:47:46,140 dblite.py  module:dblite  105  func:wrapper  不存在的数据表索引:desfault.test5
+[INFO      ] - 2020-07-17 11:48:35,196 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:48:35,197 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:48:35,197 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:48:35,198 dblite.py  module:dblite  103  func:wrapper  不存在的数据库索引:desfault.test5
+[INFO      ] - 2020-07-17 11:48:42,533 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:48:42,533 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:48:42,534 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:48:42,534 dblite.py  module:dblite  106  func:wrapper  不存在的数据表索引:default.test5
+[INFO      ] - 2020-07-17 11:50:32,429 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:50:32,430 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:50:32,430 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:50:32,431 dblite.py  module:dblite  106  func:wrapper  不存在的数据表索引:default.test5
+[INFO      ] - 2020-07-17 11:50:45,923 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:50:45,923 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:50:45,924 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 11:50:45,925 dblite.py  module:dblite  106  func:wrapper  不存在的数据表索引:default.test5
+[INFO      ] - 2020-07-17 11:50:54,597 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 11:50:54,598 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 11:50:54,599 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:00:49,600 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:00:49,600 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:00:49,601 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:06:00,621 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:06:00,621 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:06:00,622 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:06:00,623 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:06:00,623 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:06:00,624 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:06:41,433 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:06:41,433 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:06:41,434 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:06:41,436 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:06:41,436 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:06:41,437 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:06:49,271 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:06:49,272 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:06:49,272 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:07:19,153 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:07:19,154 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:07:19,154 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:07:19,156 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:07:19,156 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:07:19,157 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:07:39,847 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:07:39,847 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:07:39,848 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:07:39,850 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:07:39,850 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:07:39,851 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:09:57,078 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:09:57,079 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:09:57,079 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:09:57,081 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:09:57,081 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:09:57,082 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:12:16,041 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:12:16,042 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:12:16,042 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:12:16,044 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:12:16,044 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:12:16,045 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:12:44,060 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:12:44,060 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:12:44,061 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:12:55,251 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:12:55,251 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:12:55,252 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:15:37,915 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:15:37,916 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:15:37,916 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:16:05,155 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:16:05,155 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:16:05,156 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:16:44,520 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:16:44,521 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:16:44,521 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:16:58,623 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:16:58,623 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:16:58,624 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:17:36,339 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:17:36,340 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:17:36,341 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 12:17:36,342 dblite.py  module:dblite  55  func:create  数据错误，插入失败，标准字段:['name', 'age'] 未能和字段:['name', 'ge'] 完全匹配
+[INFO      ] - 2020-07-17 12:19:18,749 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:19:18,750 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:19:18,751 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:22:28,026 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:22:28,026 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:22:28,027 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:22:37,870 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:22:37,871 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:22:37,871 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 12:22:37,872 dblite.py  module:dblite  55  func:create  数据格式错误，插入失败，标准格式:list 未能和字段:['name', 'age'] 数据5 完全匹配
+[INFO      ] - 2020-07-17 12:22:52,121 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:22:52,122 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:22:52,123 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 12:22:52,124 dblite.py  module:dblite  55  func:create  数据格式错误，插入失败，标准格式:list 未能和字段:['name', 'age'] 数据:5 完全匹配
+[INFO      ] - 2020-07-17 12:22:59,251 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:22:59,251 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:22:59,252 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:23:04,613 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:23:04,614 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:23:04,615 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 12:23:04,616 dblite.py  module:dblite  58  func:create  数据错误，插入失败，标准字段:['name', 'age'] 未能和字段:['name', 'age'] 完全匹配
+[INFO      ] - 2020-07-17 12:24:39,082 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:24:39,082 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:24:39,083 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 12:24:39,083 dblite.py  module:dblite  58  func:create  数据长度错误，插入失败，字段:['name', 'age'] 未能和值:['xiaoming'] 完全匹配
+[INFO      ] - 2020-07-17 12:28:57,032 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:28:57,033 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:28:57,034 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 12:28:57,034 dblite.py  module:dblite  58  func:create  数据长度错误，插入失败，字段:['name', 'age'] 未能和值:['xiaoming'] 完全匹配
+[INFO      ] - 2020-07-17 12:29:08,901 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:29:08,902 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:29:08,902 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:29:32,750 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:29:32,751 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:29:32,752 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:29:57,778 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:29:57,778 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:29:57,779 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:30:44,134 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:30:44,135 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:30:44,135 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:31:05,271 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:31:05,272 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:31:05,272 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:31:53,685 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:31:53,686 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:31:53,686 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:32:19,576 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:32:19,577 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:32:19,577 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:32:58,989 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:32:58,990 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:32:58,990 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:33:06,426 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:33:06,426 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:33:06,427 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:33:31,743 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:33:31,744 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:33:31,744 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:33:44,622 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:33:44,623 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:33:44,623 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:34:11,430 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:34:11,430 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:34:11,431 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:34:24,655 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:34:24,656 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:34:24,656 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:34:39,302 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:34:39,302 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:34:39,303 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:34:49,317 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 12:34:49,318 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 12:34:49,318 dblite.py  module:dblite  44  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 12:46:28,286 pipe.py  module:pipe  13  func:__create_file   create core/tests/text.txt
+[INFO      ] - 2020-07-17 13:19:21,079 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:19:21,080 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:19:21,080 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:20:08,514 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:20:08,514 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:20:08,515 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:20:45,876 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:20:45,877 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:20:45,877 dblite.py  module:dblite  45  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:30:50,656 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:30:50,657 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:30:50,657 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:31:27,892 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:31:27,892 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:31:27,893 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:31:59,646 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:31:59,647 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:31:59,647 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:32:02,135 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:32:02,136 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:32:02,137 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:32:06,794 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:32:06,795 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:32:06,796 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:33:43,769 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:33:43,769 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:33:43,770 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:33:43,771 dblite.py  module:dblite  83  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:33:57,496 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:33:57,497 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:33:57,497 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:34:06,668 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:34:06,668 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:34:06,669 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:34:11,177 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:34:11,178 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:34:11,178 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:34:29,268 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:34:29,269 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:34:29,269 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:34:29,270 dblite.py  module:dblite  83  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:34:38,270 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:34:38,271 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:34:38,271 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:34:43,025 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:34:43,025 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:34:43,025 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:34:43,026 dblite.py  module:dblite  83  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:34:48,711 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:34:48,712 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:34:48,713 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:34:48,713 dblite.py  module:dblite  83  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:39:26,886 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:39:26,887 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:39:26,887 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:43:58,411 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:43:58,411 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:43:58,412 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:43:58,412 dblite.py  module:dblite  88  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:44:11,725 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:44:11,725 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:44:11,726 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:44:11,726 dblite.py  module:dblite  88  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:44:38,679 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:44:38,680 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:44:38,681 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:44:38,682 dblite.py  module:dblite  87  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:45:13,910 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:45:13,911 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:45:13,911 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:45:13,912 dblite.py  module:dblite  89  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:47:08,669 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:47:08,670 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:47:08,671 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:47:08,671 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['虎子', '18']
+[WARNING   ] - 2020-07-17 13:47:08,672 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['小亮', '3']
+[WARNING   ] - 2020-07-17 13:47:08,672 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['xiaoming', '22']
+[WARNING   ] - 2020-07-17 13:47:08,672 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['xiaoming', '22']
+[WARNING   ] - 2020-07-17 13:47:08,672 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['xiaoming', '22']
+[INFO      ] - 2020-07-17 13:47:30,493 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:47:30,494 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:47:30,494 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:47:30,495 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['xiaoming', '22']
+[WARNING   ] - 2020-07-17 13:47:30,495 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['xiaoming', '22']
+[WARNING   ] - 2020-07-17 13:47:30,495 dblite.py  module:dblite  57  func:__init__  表中存在重复的数据:['xiaoming', '22']
+[WARNING   ] - 2020-07-17 13:47:30,495 dblite.py  module:dblite  89  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:47:54,765 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:47:54,766 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:47:54,766 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:47:54,767 dblite.py  module:dblite  89  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:48:48,868 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:48:48,868 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:48:48,869 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:48:48,869 dblite.py  module:dblite  89  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:49:03,544 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:49:03,545 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:49:03,545 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:49:35,635 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:49:35,635 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:49:35,636 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:49:40,397 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:49:40,397 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:49:40,397 dblite.py  module:dblite  47  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:49:40,398 dblite.py  module:dblite  89  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:55:27,186 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:55:27,186 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:55:27,187 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:55:27,187 dblite.py  module:dblite  60  func:__init__  表数据异常:{}
+[WARNING   ] - 2020-07-17 13:55:27,188 dblite.py  module:dblite  90  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:55:40,559 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:55:40,559 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:55:40,560 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:55:40,560 dblite.py  module:dblite  60  func:__init__  表数据异常:{}
+[WARNING   ] - 2020-07-17 13:55:40,561 dblite.py  module:dblite  90  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:56:03,903 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:56:03,903 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:56:03,904 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:56:03,905 dblite.py  module:dblite  60  func:__init__  表数据异常:{}
+[WARNING   ] - 2020-07-17 13:56:03,905 dblite.py  module:dblite  56  func:__init__  表中存在重复的数据,表:test 数据:xiaoming:22
+[WARNING   ] - 2020-07-17 13:56:03,905 dblite.py  module:dblite  90  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:56:38,939 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:56:38,940 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:56:38,940 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:56:38,941 dblite.py  module:dblite  60  func:__init__  表数据异常:xiaoming:22:
+[WARNING   ] - 2020-07-17 13:56:38,941 dblite.py  module:dblite  56  func:__init__  表中存在重复的数据,表:test 数据:['xiaoming', '22']
+[WARNING   ] - 2020-07-17 13:56:38,942 dblite.py  module:dblite  90  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:57:08,246 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:57:08,247 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:57:08,247 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:57:08,248 dblite.py  module:dblite  60  func:__init__  表数据异常表:test 数据:xiaoming:22:
+[WARNING   ] - 2020-07-17 13:57:08,248 dblite.py  module:dblite  56  func:__init__  表中存在重复的数据,表:test 数据:['xiaoming', '22']
+[WARNING   ] - 2020-07-17 13:57:08,248 dblite.py  module:dblite  90  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:57:32,522 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:57:32,522 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:57:32,523 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 13:57:36,646 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:57:36,646 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:57:36,647 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:57:36,647 dblite.py  module:dblite  90  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:58:47,404 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:58:47,405 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:58:47,406 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:58:47,406 dblite.py  module:dblite  91  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 13:59:16,254 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 13:59:16,254 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 13:59:16,255 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 13:59:16,255 dblite.py  module:dblite  91  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[ERROR     ] - 2020-07-17 13:59:28,673 dblite.py  module:dblite  65  func:__encode  数据格式错误，数据:ss,标准格式:<class 'list'>
+[INFO      ] - 2020-07-17 13:59:28,673 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[ERROR     ] - 2020-07-17 13:59:28,674 dblite.py  module:dblite  65  func:__encode  数据格式错误，数据:ss,标准格式:<class 'list'>
+[INFO      ] - 2020-07-17 13:59:28,674 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[ERROR     ] - 2020-07-17 13:59:28,674 dblite.py  module:dblite  65  func:__encode  数据格式错误，数据:ss,标准格式:<class 'list'>
+[INFO      ] - 2020-07-17 13:59:28,675 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 13:59:28,675 dblite.py  module:dblite  65  func:__encode  数据格式错误，数据:ss,标准格式:<class 'list'>
+[WARNING   ] - 2020-07-17 13:59:28,675 dblite.py  module:dblite  91  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[ERROR     ] - 2020-07-17 14:00:04,325 dblite.py  module:dblite  72  func:__decode  数据格式错误，数据:[],标准格式:<class 'str'>
+[INFO      ] - 2020-07-17 14:00:04,326 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[ERROR     ] - 2020-07-17 14:00:04,326 dblite.py  module:dblite  72  func:__decode  数据格式错误，数据:[],标准格式:<class 'str'>
+[INFO      ] - 2020-07-17 14:00:04,326 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[ERROR     ] - 2020-07-17 14:00:04,327 dblite.py  module:dblite  72  func:__decode  数据格式错误，数据:[],标准格式:<class 'str'>
+[INFO      ] - 2020-07-17 14:00:04,327 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 14:00:04,327 dblite.py  module:dblite  72  func:__decode  数据格式错误，数据:[],标准格式:<class 'str'>
+[WARNING   ] - 2020-07-17 14:00:04,328 dblite.py  module:dblite  91  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:00:14,524 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:00:14,525 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:00:14,525 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:00:14,526 dblite.py  module:dblite  90  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:13:52,405 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:13:52,406 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:13:52,407 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:13:52,407 dblite.py  module:dblite  94  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:14:09,891 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:14:09,892 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:14:09,893 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:14:09,894 dblite.py  module:dblite  95  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:14:31,904 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:14:31,905 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:14:31,905 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:14:31,906 dblite.py  module:dblite  96  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:16:06,263 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:16:06,263 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:16:06,264 dblite.py  module:dblite  48  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 14:16:06,265 dblite.py  module:dblite  70  func:__encode  数据格式错误，数据:['xiaoming', '22'],标准格式:<class 'core.dblite.dblite.test'>
+[INFO      ] - 2020-07-17 14:17:37,131 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:17:37,131 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:17:37,132 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:17:37,132 dblite.py  module:dblite  67  func:__load_data  表数据异常表:test 数据:None
+[ERROR     ] - 2020-07-17 14:17:37,133 dblite.py  module:dblite  71  func:__encode  数据格式错误，数据:['xiaoming', '22'],标准格式:<class 'core.dblite.dblite.test'>
+[INFO      ] - 2020-07-17 14:18:35,617 dblite.py  module:dblite  50  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:18:35,618 dblite.py  module:dblite  50  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:18:35,618 dblite.py  module:dblite  50  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:18:35,619 dblite.py  module:dblite  68  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:18:35,620 dblite.py  module:dblite  68  func:__load_data  表数据异常表:test 数据:None
+[ERROR     ] - 2020-07-17 14:18:35,620 dblite.py  module:dblite  72  func:__encode  数据格式错误，数据:['xiaoming', '22'],标准格式:<class 'core.dblite.dblite.test'>
+[INFO      ] - 2020-07-17 14:19:11,835 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:19:11,836 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:19:11,836 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:19:11,837 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:19:11,837 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:19:11,837 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[ERROR     ] - 2020-07-17 14:19:11,837 dblite.py  module:dblite  69  func:__encode  数据格式错误，数据:['xiaoming', '22'],标准格式:<class 'core.dblite.dblite.test'>
+[INFO      ] - 2020-07-17 14:19:44,724 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:19:44,725 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:19:44,725 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:19:44,725 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:19:44,726 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:19:44,726 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:19:44,726 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[ERROR     ] - 2020-07-17 14:19:44,726 dblite.py  module:dblite  69  func:__encode  数据格式错误，数据:['xiaoming', '22'],标准格式:<class 'core.dblite.dblite.test'>
+[INFO      ] - 2020-07-17 14:23:26,038 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:23:26,038 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:23:26,039 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:23:26,040 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:23:26,040 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:23:26,040 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:23:26,041 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:23:26,041 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[ERROR     ] - 2020-07-17 14:23:26,041 dblite.py  module:dblite  70  func:__encode  数据格式错误，数据:['xiaoming', '22'],标准格式:<class 'core.dblite.dblite.test'>
+[INFO      ] - 2020-07-17 14:24:31,161 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:24:31,162 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:24:31,162 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:24:31,163 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:31,163 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:31,164 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:31,164 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:31,164 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:31,164 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:False
+[INFO      ] - 2020-07-17 14:24:36,533 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:24:36,534 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:24:36,534 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:24:36,535 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:36,535 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:36,535 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:36,535 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:36,536 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:36,536 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:False
+[WARNING   ] - 2020-07-17 14:24:36,536 dblite.py  module:dblite  96  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:24:58,338 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:24:58,339 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:24:58,339 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:24:58,340 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:58,340 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:58,340 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:58,341 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:58,341 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:24:58,341 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:False
+[WARNING   ] - 2020-07-17 14:24:58,341 dblite.py  module:dblite  96  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:27:51,627 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:27:51,627 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:27:51,627 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:27:51,628 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:27:51,628 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:27:51,628 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:27:51,629 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:27:51,629 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:None
+[WARNING   ] - 2020-07-17 14:27:51,629 dblite.py  module:dblite  65  func:__load_data  表数据异常表:test 数据:False
+[WARNING   ] - 2020-07-17 14:27:51,629 dblite.py  module:dblite  96  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:28:00,210 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:28:00,210 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:28:00,211 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 14:28:03,723 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:28:03,723 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:28:03,724 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 14:28:03,724 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\test.db
+[ERROR     ] - 2020-07-17 14:28:03,725 dblite.py  module:dblite  92  func:create  数据字段错误，插入失败，标准字段:[''] 未能和字段:['name', 'age'] 完全匹配
+[INFO      ] - 2020-07-17 14:28:10,101 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:28:10,101 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:28:10,102 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:28:10,102 dblite.py  module:dblite  96  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:30:24,364 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:30:24,365 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:30:24,366 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:30:24,367 dblite.py  module:dblite  96  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 14:47:37,850 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 14:47:37,850 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 14:47:37,851 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 14:47:37,852 dblite.py  module:dblite  96  func:create  不允许数据重复，数据:['xiaoming', '22'] 已存在
+[INFO      ] - 2020-07-17 15:15:29,333 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:15:29,334 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:15:29,334 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:15:53,008 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:15:53,009 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:15:53,009 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:16:15,438 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:16:15,439 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:16:15,439 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:17:32,979 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:17:32,979 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:17:32,980 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:17:59,189 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:17:59,189 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:17:59,190 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:18:18,164 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:18:18,165 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:18:18,165 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:19:07,034 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:19:07,034 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:19:07,035 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:19:22,116 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:19:22,117 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:19:22,117 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:20:57,309 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:20:57,310 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:20:57,310 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:22:02,847 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:22:02,848 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:22:02,849 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:22:30,161 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:22:30,161 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:22:30,162 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:32:57,316 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:32:57,316 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:32:57,316 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:33:49,383 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:33:49,383 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:33:49,383 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:34:05,290 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:34:05,290 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:34:05,290 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:35:48,086 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:35:48,086 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:35:48,086 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:39:33,807 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:39:33,807 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:39:33,808 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:39:45,567 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:39:45,567 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:39:45,568 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:40:03,530 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:40:03,531 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:40:03,531 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:41:06,682 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:41:06,682 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:41:06,682 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 15:41:46,105 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 15:41:46,105 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 15:41:46,105 dblite.py  module:dblite  49  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:08:40,257 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:08:40,258 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:08:40,258 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:08:50,538 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:08:50,538 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:08:50,539 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:09:11,142 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:09:11,143 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:09:11,144 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:09:58,039 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:09:58,040 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:09:58,040 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:11:03,449 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:11:03,450 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:11:03,450 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:11:20,423 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:11:20,424 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:11:20,424 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:11:20,425 dblite.py  module:dblite  148  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:11:45,741 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:11:45,742 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:11:45,743 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:11:45,743 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\test.db
+[WARNING   ] - 2020-07-17 16:11:45,744 dblite.py  module:dblite  143  func:retrieve  在字段 [''] 中查询不存在的字段: name
+[INFO      ] - 2020-07-17 16:12:07,448 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:12:07,448 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:12:07,449 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:12:07,450 dblite.py  module:dblite  148  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:12:48,121 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:12:48,121 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:12:48,122 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:12:48,123 dblite.py  module:dblite  148  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:12:59,550 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:12:59,551 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:12:59,552 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:12:59,552 dblite.py  module:dblite  148  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:13:40,552 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:13:40,552 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:13:40,553 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:13:40,553 dblite.py  module:dblite  149  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:14:12,030 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:14:12,031 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:14:12,032 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:14:12,032 dblite.py  module:dblite  150  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:15:01,755 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:15:01,755 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:15:01,756 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:15:01,756 dblite.py  module:dblite  151  func:retrieve  字段 name 中未查询到数据: xiaoming
+[ERROR     ] - 2020-07-17 16:15:01,757 pipe.py  module:pipe  49  func:__touch  创建失败，已存在的文件，文件路径：storage/db\default\test.db.swap
+[INFO      ] - 2020-07-17 16:15:06,151 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:15:06,151 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:15:06,152 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:15:06,153 dblite.py  module:dblite  151  func:retrieve  字段 name 中未查询到数据: xiaoming
+[ERROR     ] - 2020-07-17 16:15:06,153 pipe.py  module:pipe  49  func:__touch  创建失败，已存在的文件，文件路径：storage/db\default\test.db.swap
+[INFO      ] - 2020-07-17 16:15:36,433 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:15:36,433 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:15:36,434 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:15:36,435 dblite.py  module:dblite  151  func:retrieve  字段 name 中未查询到数据: xiaoming
+[ERROR     ] - 2020-07-17 16:15:36,435 pipe.py  module:pipe  49  func:__touch  创建失败，已存在的文件，文件路径：storage/db\default\test.db.swap
+[INFO      ] - 2020-07-17 16:15:46,351 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:15:46,352 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:15:46,353 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:15:46,353 dblite.py  module:dblite  151  func:retrieve  字段 name 中未查询到数据: xiaoming
+[ERROR     ] - 2020-07-17 16:15:46,353 pipe.py  module:pipe  49  func:__touch  创建失败，已存在的文件，文件路径：storage/db\default\test.db.swap
+[INFO      ] - 2020-07-17 16:16:00,117 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:16:00,118 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:16:00,118 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:16:00,119 dblite.py  module:dblite  149  func:retrieve  字段 name 中未查询到数据: xiaoming
+[ERROR     ] - 2020-07-17 16:16:00,120 pipe.py  module:pipe  49  func:__touch  创建失败，已存在的文件，文件路径：storage/db\default\test.db.swap
+[INFO      ] - 2020-07-17 16:26:35,456 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:26:35,456 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:26:35,457 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:26:35,457 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:26:35,457 dblite.py  module:dblite  149  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:28:02,941 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:28:02,941 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:28:02,942 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:28:02,942 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:28:02,943 dblite.py  module:dblite  150  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:37:28,685 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:37:28,686 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:37:28,686 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:37:28,687 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:37:28,687 dblite.py  module:dblite  156  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:38:06,279 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:38:06,279 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:38:06,280 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:38:06,281 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:38:06,282 dblite.py  module:dblite  156  func:retrieve  字段 name 中未查询到数据: xiaoming
+[INFO      ] - 2020-07-17 16:38:13,537 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:38:13,538 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:38:13,538 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:38:13,539 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:38:23,531 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:38:23,532 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:38:23,532 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:38:23,533 dblite.py  module:dblite  66  func:__load_data  表中存在重复的数据,表:test 数据:['xiaohua', '6']
+[WARNING   ] - 2020-07-17 16:38:23,533 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:38:23,534 dblite.py  module:dblite  146  func:update  已动作，数据无变化，旧记录:[test(name='xiaohua', age='6')]，新记录:[test(name='xiaohua', age='6')]
+[INFO      ] - 2020-07-17 16:38:55,706 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:38:55,707 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:38:55,708 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:38:55,709 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:38:55,709 dblite.py  module:dblite  146  func:update  已动作，数据无变化，旧记录:[test(name='xiaohua', age='6')]，新记录:[test(name='xiaohua', age='6')]
+[INFO      ] - 2020-07-17 16:40:36,291 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:40:36,291 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:40:36,292 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:40:36,292 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:40:36,293 dblite.py  module:dblite  146  func:update  已动作，数据无变化，旧记录:[test(name='xiaohua', age='6')]，新记录:[test(name='xiaohua', age='6')]
+[INFO      ] - 2020-07-17 16:41:57,225 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:41:57,225 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:41:57,225 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:41:57,225 dblite.py  module:dblite  146  func:update  已动作，数据无变化，旧记录:[test(name='xiaohua', age='6')]，新记录:[test(name='xiaohua', age='6')]
+[INFO      ] - 2020-07-17 16:42:07,957 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:42:07,957 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:42:07,957 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:42:07,957 dblite.py  module:dblite  70  func:__load_data  表数据异常表:test 数据:
+[INFO      ] - 2020-07-17 16:42:07,957 dblite.py  module:dblite  146  func:update  已动作，数据无变化，旧记录:[test(name='xiaohua', age='6')]，新记录:[test(name='xiaohua', age='6')]
+[INFO      ] - 2020-07-17 16:45:43,423 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:45:43,424 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:45:43,425 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:45:43,426 dblite.py  module:dblite  146  func:update  已动作，数据无变化，旧记录:[test(name='xiaohua', age='6')]，新记录:[test(name='xiaohua', age='6')]
+[INFO      ] - 2020-07-17 16:46:49,823 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:46:49,824 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:46:49,824 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:46:49,825 dblite.py  module:dblite  146  func:update  已动作，数据无变化，旧记录:[test(name='xiaohua', age='6', habit='ball')]，新记录:[test(name='xiaohua', age='6', habit='ball')]
+[INFO      ] - 2020-07-17 16:47:44,301 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:47:44,302 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:47:44,302 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:48:04,750 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:48:04,750 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:48:04,751 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:48:04,751 dblite.py  module:dblite  145  func:update  已动作，数据无变化，旧记录:[test(name='xiaogao', age='6', habit='ball'), test(name='xiaogao', age='8', habit='ball')]，新记录:[test(name='xiaogao', age='6', habit='ball'), test(name='xiaogao', age='8', habit='ball')]
+[INFO      ] - 2020-07-17 16:48:23,763 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:48:23,763 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:48:23,764 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:48:23,764 dblite.py  module:dblite  145  func:update  已动作，数据无变化，旧记录:[test(name='xiaogao', age='6', habit='ball'), test(name='xiaogao', age='8', habit='ball')]，新记录:[test(name='xiaogao', age='6', habit='ball'), test(name='xiaogao', age='8', habit='ball')]
+[INFO      ] - 2020-07-17 16:48:26,133 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:48:26,134 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:48:26,134 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:48:26,135 dblite.py  module:dblite  145  func:update  已动作，数据无变化，旧记录:[test(name='xiaogao', age='6', habit='ball'), test(name='xiaogao', age='8', habit='ball')]，新记录:[test(name='xiaogao', age='6', habit='ball'), test(name='xiaogao', age='8', habit='ball')]
+[INFO      ] - 2020-07-17 16:49:11,158 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:49:11,158 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:49:11,159 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 16:49:11,160 dblite.py  module:dblite  110  func:create  数据字段错误，插入失败，标准字段:['name', 'age', 'habit'] 未能和字段:['name', 'age'] 完全匹配
+[INFO      ] - 2020-07-17 16:49:49,704 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:49:49,705 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:49:49,705 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 16:49:52,826 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:49:52,827 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:49:52,827 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:49:52,828 dblite.py  module:dblite  114  func:create  不允许数据重复，数据:['xiaoming', '8', 'ball'] 已存在
+[INFO      ] - 2020-07-17 16:50:04,473 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:50:04,474 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:50:04,474 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:50:04,475 dblite.py  module:dblite  114  func:create  不允许数据重复，数据:['xiaoming', '8', 'ball'] 已存在
+[INFO      ] - 2020-07-17 16:50:55,433 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 16:50:55,434 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 16:50:55,434 dblite.py  module:dblite  54  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 16:50:55,435 dblite.py  module:dblite  114  func:create  不允许数据重复，数据:['xiaoming', '8', 'ball'] 已存在
+[INFO      ] - 2020-07-17 17:59:56,781 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 18:00:25,510 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 18:01:11,873 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 18:02:04,791 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 18:02:19,092 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 18:17:46,206 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 18:18:21,967 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 18:20:45,373 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 19:24:55,647 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 19:24:55,648 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:24:55,649 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 19:24:55,658 dblite.py  module:dblite  105  func:create  数据格式错误，插入失败，标准格式:<class 'list'> 未能和字段:dict_keys(['name', 'age', 'habit']) 数据:dict_values(['xiaoming', '85', 'walk']) 完全匹配
+[INFO      ] - 2020-07-17 19:25:44,109 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 19:25:44,109 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:25:44,109 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 19:25:44,109 dblite.py  module:dblite  111  func:create  数据字段错误，插入失败，标准字段:[''] 未能和字段:['name', 'age', 'habit'] 完全匹配
+[INFO      ] - 2020-07-17 19:26:06,487 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 19:26:06,487 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:26:06,487 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 19:26:06,502 dblite.py  module:dblite  111  func:create  数据字段错误，插入失败，标准字段:[''] 未能和字段:['name', 'age', 'habit'] 完全匹配
+[INFO      ] - 2020-07-17 19:26:53,435 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:26:53,435 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:28:00,096 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\character.db
+[INFO      ] - 2020-07-17 19:28:00,096 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:28:00,097 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 19:28:00,104 dblite.py  module:dblite  111  func:create  数据字段错误，插入失败，标准字段:[''] 未能和字段:['name', 'age', 'habit'] 完全匹配
+[INFO      ] - 2020-07-17 19:28:21,266 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:28:21,266 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[CRITICAL  ] - 2020-07-17 19:34:28,551 dblite.py  module:dblite  64  func:__load_data  数据表初始化失败，数据文件损坏，无法读取，错误:Type names and field names must be valid identifiers: '85'
+[CRITICAL  ] - 2020-07-17 19:34:42,149 dblite.py  module:dblite  64  func:__load_data  数据表初始化失败，数据文件损坏，无法读取，错误:Type names and field names must be valid identifiers: '85'
+[CRITICAL  ] - 2020-07-17 19:35:57,554 dblite.py  module:dblite  61  func:__init__  数据表初始化失败，数据文件损坏，无法读取，错误:Type names and field names must be valid identifiers: '85'
+[INFO      ] - 2020-07-17 19:35:57,570 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:35:57,570 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[ERROR     ] - 2020-07-17 19:35:57,570 dblite.py  module:dblite  114  func:create  数据字段错误，插入失败，标准字段:['name', 'age', 'habitxiaoming', '85', 'walk'] 未能和字段:['name', 'age', 'habit'] 完全匹配
+[INFO      ] - 2020-07-17 19:40:15,662 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:40:15,677 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 19:40:15,677 dblite.py  module:dblite  118  func:create  不允许数据重复，数据:['xiaoming', '85', 'walk'] 已存在
+[INFO      ] - 2020-07-17 19:40:57,835 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:40:57,835 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 19:40:57,851 dblite.py  module:dblite  118  func:create  不允许数据重复，数据:['xiaoming', '85', 'walk'] 已存在
+[INFO      ] - 2020-07-17 19:45:32,104 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:45:32,105 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:45:50,424 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:45:50,424 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:45:55,802 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:45:55,803 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:46:29,731 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:46:29,731 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[WARNING   ] - 2020-07-17 19:46:29,739 dblite.py  module:dblite  120  func:insert  不允许数据重复，数据:['xiaoming', '85', 'walk'] 已存在
+[INFO      ] - 2020-07-17 19:52:24,026 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:52:24,026 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:52:57,802 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:52:57,803 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:53:29,870 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:53:29,871 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:53:53,266 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:53:53,266 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:54:59,239 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:54:59,239 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:55:23,335 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:55:23,335 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:55:32,745 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 19:55:38,576 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:55:38,576 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:55:41,736 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 19:56:41,405 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:56:41,406 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:56:43,689 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 19:56:55,540 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:56:55,541 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:56:57,833 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 19:58:18,231 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:58:18,232 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:58:20,546 app.py  module:app  14  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 19:58:25,143 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:58:25,144 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:58:26,562 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 19:58:59,981 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 19:58:59,981 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 19:59:01,689 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:13:39,343 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:13:39,343 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:13:41,549 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:17:23,707 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:17:23,708 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:17:27,757 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:17:41,990 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:17:41,991 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:17:43,295 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:22:31,908 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:22:31,908 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:22:33,644 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:23:38,966 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:23:38,967 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:23:42,072 app.py  module:app  16  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:24:19,419 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:24:19,420 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:24:19,762 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:25:53,680 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:25:53,681 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:25:54,085 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:26:16,651 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:26:16,652 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:26:17,014 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:32:01,407 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:32:01,407 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:32:01,745 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:34:46,974 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:34:46,974 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:34:47,332 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:36:31,031 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:36:31,032 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:36:31,375 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:37:21,509 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:37:21,509 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:37:21,870 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:37:48,655 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:37:48,656 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:37:48,998 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:37:49,104 dblite.py  module:dblite  31  func:wrapper  table:state 为空
+[INFO      ] - 2020-07-17 20:38:26,408 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:38:26,408 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:38:26,775 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:38:26,874 dblite.py  module:dblite  31  func:wrapper  table:state 为空
+[INFO      ] - 2020-07-17 20:42:08,875 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:42:08,875 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:42:09,234 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:42:09,343 dblite.py  module:dblite  31  func:wrapper  table:state 为空
+[WARNING   ] - 2020-07-17 20:42:09,343 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 20:44:48,837 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:44:48,837 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:44:49,196 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:44:49,305 dblite.py  module:dblite  31  func:wrapper  执行中止，不能对空表进行此操作，表名:state，中断参数:(<core.dblite.dblite.Table object at 0x00000162B2739580>, None, 1) -- {}，
+[WARNING   ] - 2020-07-17 20:44:49,305 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 20:45:27,186 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:45:27,186 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:45:27,545 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:45:27,643 dblite.py  module:dblite  31  func:wrapper  执行中止，不能对空表进行此操作，表名:state，中断参数:(<core.dblite.dblite.Table object at 0x00000219ED8A9580>, None, 1) -- {}，
+[WARNING   ] - 2020-07-17 20:45:27,643 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 20:45:59,736 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:45:59,736 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\state.db
+[INFO      ] - 2020-07-17 20:46:00,032 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:46:00,126 dblite.py  module:dblite  31  func:wrapper  执行中止，不能对空表进行此操作，表名:state，中断参数:(<core.dblite.dblite.Table object at 0x000002295D049580>, 'state', 1) -- {}，
+[WARNING   ] - 2020-07-17 20:46:00,126 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 20:46:38,230 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:46:38,590 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:47:49,866 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:47:50,162 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:48:01,490 dblite.py  module:dblite  57  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:48:01,880 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:50:46,164 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:50:46,522 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:55:02,162 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:55:02,506 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:56:29,331 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:56:29,628 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:56:45,541 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:56:45,900 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 20:57:36,686 dblite.py  module:dblite  56  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 20:57:36,983 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:01:05,435 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:01:05,779 app.py  module:app  17  func:start  认证成功，进入主程序!
+[ERROR     ] - 2020-07-17 21:01:05,902 pipe.py  module:pipe  49  func:__touch  创建失败，已存在的文件，文件路径：storage/db\default\state.db.swap
+[INFO      ] - 2020-07-17 21:04:51,969 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:04:52,344 app.py  module:app  17  func:start  认证成功，进入主程序!
+[ERROR     ] - 2020-07-17 21:04:52,453 pipe.py  module:pipe  49  func:__touch  创建失败，已存在的文件，文件路径：storage/db\default\state.db.swap
+[WARNING   ] - 2020-07-17 21:04:52,453 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 21:05:13,490 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:05:13,833 app.py  module:app  17  func:start  认证成功，进入主程序!
+[WARNING   ] - 2020-07-17 21:05:13,943 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 21:07:54,786 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:07:55,130 app.py  module:app  17  func:start  认证成功，进入主程序!
+[WARNING   ] - 2020-07-17 21:07:55,255 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 21:08:18,361 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:08:18,736 app.py  module:app  17  func:start  认证成功，进入主程序!
+[WARNING   ] - 2020-07-17 21:08:18,846 MainGui.py  module:MainGui  520  func:set_state  状态设置失败，未知的原因，待设置的状态:1
+[INFO      ] - 2020-07-17 21:08:58,135 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:08:58,494 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:09:25,849 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:09:26,131 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:11:07,576 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:11:07,873 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:19:00,426 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:19:00,762 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:19:17,186 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:19:50,955 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:25:24,134 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:26:09,553 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:27:41,502 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:28:16,565 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:28:25,190 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:29:01,627 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:29:07,518 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:29:09,573 app.py  module:app  15  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 21:32:17,736 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:32:19,910 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:38:37,233 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:38:44,685 app.py  module:app  15  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 21:40:09,205 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:40:27,419 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:41:12,850 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:41:15,058 app.py  module:app  15  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 21:46:20,811 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:46:37,071 app.py  module:app  15  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 21:47:13,766 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:47:17,706 app.py  module:app  15  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 21:47:37,267 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:47:42,377 app.py  module:app  15  func:start  未完成认证，正在退出程序...
+[INFO      ] - 2020-07-17 21:49:47,260 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:49:50,951 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:50:05,213 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:50:08,178 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:50:11,072 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:50:13,187 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:50:38,541 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:50:40,609 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:52:58,503 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:53:00,449 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:56:08,462 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:56:09,974 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:56:21,169 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:56:23,080 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:56:30,094 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:56:32,140 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:56:33,358 overseer.py  module:overseer  14  func:overseer   worker sleeping ,wake it up
+[INFO      ] - 2020-07-17 21:59:21,325 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:59:23,669 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 21:59:40,938 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 21:59:42,922 app.py  module:app  17  func:start  认证成功，进入主程序!
+[INFO      ] - 2020-07-17 22:01:17,492 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:01:38,563 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:02:40,016 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:16:58,186 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:17:38,683 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:20:31,530 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:21:00,771 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:21:15,071 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:21:24,124 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:21:55,433 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:22:54,345 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:26:56,544 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:27:42,343 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:28:11,284 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:28:48,925 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:29:06,057 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:29:33,177 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:29:42,534 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:30:09,030 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db
+[INFO      ] - 2020-07-17 22:31:13,291 dblite.py  module:dblite  55  func:__init__  读取到空表 path:storage/db\default\equipment.db

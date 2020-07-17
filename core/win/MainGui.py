@@ -11,87 +11,31 @@ from PIL import ImageTk
 from threading import Thread
 from core.state.state import get_state, set_state
 from core.win.ScrollFrame import ScrollableFrame
+from core.game_components import character
+from lib import logger
+from lib import config_init, config_parser
 
 
-def tellEngine(charactersHandle):
-    names = list(charactersHandle.resource.keys())
-    path_file = config["engine.path_selected"]
-    pklDump(names, path_file)
+def start_main_window():
+    main_win = MainGui()
+    main_win.mainloop()
 
 
 class MainGui(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.init()
+        # self.init()
+        self.gui_config = config_parser(config_init.user.path)
+        self.win_temporary_line_up = tk.Toplevel()
+        self.win_equipment_list = tk.Toplevel()
         self.build()
-        self.mainloop()
-
-    # 在这里进行初始化和数据准备
-    # 数据准备部分
-    # self.allCharactersCharacter           CHaracter实例,character句柄,指向全部可用的character的集合
-    # self.aLLEquipmentsEquipment           Equipment实例,Equipment句柄,指向全部可用的Equipment的集合
-    # self.temporaryLineupCharacter         CHaracter实例,character句柄,指向当前队伍的character集合
-    # self.allCharactersphoto               字典,{name:img},全部人物头像
-    # self.allEquipmentsImg                 字典,{name:img},全部装备图片
-    # self.temporaryLineupCharactersPhoto   字典,{name:img},当前队伍人物头像
-    # self.allCharactersName                列表,存储了所有可用character的名字
-    # self.allEquipmentsName                列表,存储了所有可用equipment的名字
-    # 窗口更新部分
-    # self.charactersState                  列表,用来存储主窗口characterItem.ckB的状态,用字典会产生bug,怀疑是tkinter的设计缺陷
-    # self.temporaryLineupItems             字典,由按钮和人物头像,装备图像组成的一个人物表示集合,在窗口self.winTemporaryLineup绘制
-    # self.flag_ws                          布尔,用于控制winTemporaryLineup窗口批量操作的动画
-    # self.isMainWinReady                   布尔,用于控制初始化时刻主窗口的隐藏/显示,在主窗口渲染完成之前为False,
-    #                                       当主窗口渲染完成之后为True
-    def init(self):
-        # 句柄初始化
-        self.temporaryLineupCharacter = Character()
-        self.allCharactersCharacter = loadCharacterHandle(
-            config["resource.path_characters"])
-        self.aLLEquipmentsEquipment = loadEquipmentsHandle(
-            config["resource.path_equipments"])
-        self.temporaryLineupCharacter = Character()
-        # 图像资源初始化
-        self.allCharactersphoto = self.loadPhotos(self.allCharactersCharacter)
-        self.allEquipmentsImg = self.loadEquipmentsImg(
-            self.aLLEquipmentsEquipment)
-        # 用于search的名字
-        self.allCharactersName = list(self.allCharactersphoto.keys())
-        self.allEquipmentsName = list(self.allEquipmentsImg.keys())
-        # 窗口关键记录值初始化
-        self.charactersState = []
-        self.temporaryLineupItems = {}
-        self.flag_ws = True
-        # TODO
-        # 无明显效果,取消
-        # self.isMainWinReady = False
-        # self.hideWin(self)
-
-    def loadPhotos(self, CharactersHandle):
-        photos = {}
-        for character in CharactersHandle.resource.values():
-            photos[character.name] = ImageTk.PhotoImage(
-                (cv2PIL(character.headerImg)))
-        return photos
-
-    def loadEquipmentsImg(self, equipmentsHandle):
-        imgs = {}
-        for equipment in equipmentsHandle.resource.values():
-            imgs[equipment.name] = ImageTk.PhotoImage(
-                (cv2PIL(equipment.equipmentImg)))
-        return imgs
-
-    # 建造各窗口
-    # self
-    # self.winTemporaryLineup
-    # self.winEquipmentsList
 
     def build(self):
         # 主窗口
-        self.buildWinMain()
+        self.build_outline()
+
         # 当前阵容窗口
-        self.winTemporaryLineup = tk.Toplevel()
         # 装备概览窗口
-        self.winEquipmentsList = tk.Toplevel()
 
         def ckthwe(event):
             if event.widget != self.winEquipmentsList:
@@ -106,32 +50,32 @@ class MainGui(tk.Tk):
         # 监听键盘
         self.listenKeyboard()
 
-    def buildWinMain(self):
-        self.setStateThenTitle(1)
-        self.iconbitmap(config['gui.default.win_main.ico'])
-        self.attributes("-alpha", config['gui.default.win_main.alpha'])
-        self.x = config['gui.default.win_main.x']
-        self.y = config['gui.default.win_main.y']
+    def build_outline(self):
+        self.set_state(1)
+        self.iconbitmap(self.gui_config.gui.common.icon.main.path)
+        self.attributes("-alpha", self.gui_config.gui.default.win_main.alpha)
+        self.x = self.gui_config.gui.default.win_main.x
+        self.y = self.gui_config.gui.default.win_main.y
         geo_conf = str(self.x) + 'x' + str(self.y)
         self.geometry(geo_conf)
-        geo_conf = '+' + str(config['gui.default.win_main.migration.x']) + \
-                   '+' + str(config['gui.default.win_main.migration.y'])
+        geo_conf = '+' + str(self.gui_config.gui.default.win_main.migration.x) + \
+                   '+' + str(self.gui_config.gui.default.win_main.migration.y)
         self.geometry(geo_conf)
-        self.resizable(width=config['gui.default.win_main.resizeble.x'],
-                       height=config['gui.default.win_main.resizeble.y'])
+        self.resizable(width=self.gui_config.gui.default.win_main.resizeble.x,
+                       height=self.gui_config.gui.default.win_main.resizeble.y)
         # top Down
         self.top = False
         # 动态布局计算
         # 或许不该使用动态计算的布局,而是把布局全做进配置文件中
-        itemFrameWidth = config["gui.default.win_main.item.width"]
+        itemFrameWidth = self.gui_config.gui.default.win_main.item.width
         numOneLine = self.x // itemFrameWidth
         padx = (self.x % itemFrameWidth) // 2
         bgFrame = tk.Frame(self,
-                           bg=config["gui.default.win_main.bgColor.default"],
+                           bg=self.gui_config.gui.default.win_main.bgColor.default,
                            width=self.x,
                            height=self.y)
         mainFrame = tk.Frame(bgFrame,
-                             bg=config["gui.default.win_main.bgColor.default"],
+                             bg=self.gui_config.gui.default.win_main.bgColor.default,
                              width=self.x,
                              height=self.y)
         bgFrame.grid_propagate(0)
@@ -174,7 +118,7 @@ class MainGui(tk.Tk):
         lineupMenu.add_command(label='刷新', command=self.refreshLineup)
         lineupMenu.add_separator()
         # TODO
-        lineupNames = getLineupsName(config["resource.dir_lineups"])
+        lineupNames = []
         for lineupName in lineupNames:
             lineupMenu.add_command(
                 label=lineupName, command=lambda x=lineupName: self.importLineupFromName(x))
@@ -192,15 +136,15 @@ class MainGui(tk.Tk):
 
     def buildMainFrame(self, master, numOneLine):
         self.checkButtonsState = []
-        itemWidth = config["gui.default.win_main.item.width"]
-        itemHeight = config["gui.default.win_main.item.height"]
-        # buttonWidth = config["gui.default.win_main.item.button.width"]
-        # buttonHeight = config["gui.default.win_main.item.button.height"]
-        # photoWidth = config["gui.default.win_main.item.button.width"]
-        # photoHeight = config["gui.default.win_main.item.button.height"]
-        selectcolor = config["gui.default.win_main.item.bgColor"]
-        fgColor = config["gui.default.win_main.item.fgColor"]
-        bgColor = config["gui.default.win_main.item.bgColor"]
+        itemWidth = self.gui_config.gui.default.win_main.item.width
+        itemHeight = self.gui_config.gui.default.win_main.item.height
+        # buttonWidth = self.gui_config.gui.default.win_main.item.button.width
+        # buttonHeight = self.gui_config.gui.default.win_main.item.button.height
+        # photoWidth = self.gui_config.gui.default.win_main.item.button.width
+        # photoHeight = self.gui_config.gui.default.win_main.item.button.height
+        selectcolor = self.gui_config.gui.default.win_main.item.bgColor
+        fgColor = self.gui_config.gui.default.win_main.item.fgColor
+        bgColor = self.gui_config.gui.default.win_main.item.bgColor
         for i in range(len(self.allCharactersName)):
             # 避免渲染的画面撕裂
             # time.sleep(0.0001)
@@ -257,15 +201,15 @@ class MainGui(tk.Tk):
     def buildWinTemporaryLineup(self, winTemporaryLineup):
         winTemporaryLineup.overrideredirect(True)
         winTemporaryLineup.attributes(
-            "-alpha", config["gui.default.win_temporary_lineup.alpha"])
+            "-alpha", self.gui_config.gui.default.win_temporary_lineup.alpha)
         # 窗口大小
-        x = config["gui.default.win_temporary_lineup.x"]
-        y = config["gui.default.win_temporary_lineup.y"]
+        x = self.gui_config.gui.default.win_temporary_lineup.x
+        y = self.gui_config.gui.default.win_temporary_lineup.y
         gconf = str(x) + "x" + str(y)
         winTemporaryLineup.geometry(gconf)
         # 窗口偏移
-        gconf = "+" + str(config["gui.default.win_temporary_lineup.migration.x"]) + \
-                "+" + str(config["gui.default.win_temporary_lineup.migration.y"])
+        gconf = "+" + str(self.gui_config.gui.default.win_temporary_lineup.migration.x) + \
+                "+" + str(self.gui_config.gui.default.win_temporary_lineup.migration.y)
         winTemporaryLineup.geometry(gconf)
         winTemporaryLineup.resizable(width=False, height=False)
         self.winTemporaryLineup.grid_propagate(0)
@@ -273,11 +217,11 @@ class MainGui(tk.Tk):
 
         containerFrame = tk.Frame(
             winTemporaryLineup,
-            bg=config["gui.default.win_main.item.bgColor"],
+            bg=self.gui_config.gui.default.win_main.item.bgColor,
             width=x,
             height=y,
-            padx=config["gui.default.win_temporary_lineup.padx"],
-            pady=config["gui.default.win_temporary_lineup.pady"]
+            padx=self.gui_config.gui.default.win_temporary_lineup.padx,
+            pady=self.gui_config.gui.default.win_temporary_lineup.pady
         )
         containerFrame.grid_propagate(0)
         containerFrame.grid()
@@ -287,8 +231,8 @@ class MainGui(tk.Tk):
             width=x,
             height=y,
             highlightthickness=0,
-            # bg=config["gui.default.win_temporary_lineup.bgColor.default"],
-            bg=config["gui.default.win_main.item.bgColor"]
+            # bg=self.gui_config.gui.default.win_temporary_lineup.bgColor.default,
+            bg=self.gui_config.gui.default.win_main.item.bgColor
         )
         self.winTemporaryLineupFrame.grid()
         self.buildWinTemporaryLineupItems(self.winTemporaryLineupFrame)
@@ -305,12 +249,12 @@ class MainGui(tk.Tk):
     # 使用
     # self.winTemporaryLineupFrame
     def addWinTemporaryLineupItem(self, character):
-        itemWidth = config["gui.default.win_temporary_lineup.item.width"]
-        itemHeight = config["gui.default.win_temporary_lineup.item.height"]
-        bgColor = config["gui.default.win_temporary_lineup.item.bgColor"]
-        fgColor = config["gui.default.win_temporary_lineup.item.fgColor"]
-        itemImageWidth = config["gui.default.win_temporary_lineup.item.image.width"]
-        itemImageHeight = config["gui.default.win_temporary_lineup.item.image.height"]
+        itemWidth = self.gui_config.gui.default.win_temporary_lineup.item.width
+        itemHeight = self.gui_config.gui.default.win_temporary_lineup.item.height
+        bgColor = self.gui_config.gui.default.win_temporary_lineup.item.bgColor
+        fgColor = self.gui_config.gui.default.win_temporary_lineup.item.fgColor
+        itemImageWidth = self.gui_config.gui.default.win_temporary_lineup.item.image.width
+        itemImageHeight = self.gui_config.gui.default.win_temporary_lineup.item.image.height
         # 角色渲染区,当需要删除角色渲染时,删除itemFrame,itemFrame.destroy()
         itemFrame = tk.Frame(
             self.winTemporaryLineupFrame.scrollable_frame,
@@ -334,7 +278,7 @@ class MainGui(tk.Tk):
         nameLabel = tk.Checkbutton(
             itemFrame,
             text=character.name.ljust(4, chr(12288)),
-            selectcolor=config["gui.default.win_main.item.bgColor"],
+            selectcolor=self.gui_config.gui.default.win_main.item.bgColor,
             bg=bgColor,
             fg=fgColor,
             variable=state,
@@ -360,7 +304,7 @@ class MainGui(tk.Tk):
         equipments = character.equipmentArea.all()
         for i in range(character.equipmentArea.maxArea):
             if i not in equipments.keys():
-                equipmentName = config["gui.default.win_equipments_list.empty.name"]
+                equipmentName = self.gui_config.gui.default.win_equipments_list.empty.name
             else:
                 equipmentName = equipments[i].name
             equipmentImg = self.allEquipmentsImg[equipmentName]
@@ -397,14 +341,14 @@ class MainGui(tk.Tk):
         winEquipmentsList.overrideredirect(True)
         winEquipmentsList.attributes('-topmost', True)
         winEquipmentsList.attributes(
-            "-alpha", config["gui.default.win_equipments_list.alpha"])
+            "-alpha", self.gui_config.gui.default.win_equipments_list.alpha)
         # 窗口大小
-        x = config["gui.default.win_equipments_list.x"]
-        y = config["gui.default.win_equipments_list.y"]
+        x = self.gui_config.gui.default.win_equipments_list.x
+        y = self.gui_config.gui.default.win_equipments_list.y
         gconf = str(x) + "x" + str(y)
         winEquipmentsList.geometry(gconf)
         winEquipmentsList.resizable(width=False, height=False)
-        bg = config["gui.default.win_equipments_list.bgColor.default"]
+        bg = self.gui_config.gui.default.win_equipments_list.bgColor.default
         self.winEquipmentsListFrame = tk.Frame(
             winEquipmentsList,
             bg=bg,
@@ -413,7 +357,7 @@ class MainGui(tk.Tk):
         )
         self.winEquipmentsListFrame.grid_propagate(0)
         self.winEquipmentsListFrame.grid()
-        numOneLine = config["gui.default.win_equipments_list.item_frame.num_one_line"]
+        numOneLine = self.gui_config.gui.default.win_equipments_list.item_frame.num_one_line
         for name in self.allEquipmentsName:
             i = self.allEquipmentsName.index(name)
             x = i // numOneLine
@@ -514,12 +458,14 @@ class MainGui(tk.Tk):
         self.buildMenu()
         # self.lower()
 
-    def setStateThenTitle(self, state):
-        setState(state)
+    def set_state(self, state):
+        res = set_state(state)
+        if not res:
+            logger.warning("状态设置失败，未知的原因，待设置的状态:{}".format(state))
         if state == 1:
-            self.title(config['gui.default.win_main.title.text.active'])
+            self.title(self.gui_config.gui.default.win_main.title.text.positive)
         if state == 0:
-            self.title(config['gui.default.win_main.title.text.inactive'])
+            self.title(self.gui_config.gui.default.win_main.title.text.negative)
         # self.setTitle(state)
 
     def changeStateThenTitle(self):
@@ -531,12 +477,12 @@ class MainGui(tk.Tk):
         self.buildMenu()
 
     def importLineupFromName(self, name):
-        file_path = config["resource.dir_lineups"] + name + ".pkl"
+        file_path = self.gui_config.resource.dir_lineups + name + ".pkl"
         self.importLineupFromFile(file_path)
 
     def importLineupFromFile(self, file_path=""):
         if file_path == '':
-            default_dir = config["resource.root_dir"]
+            default_dir = self.gui_config.resource.root_dir
             file_path = filedialog.askopenfilename(
                 title=u'从文件导入',
                 initialdir=(os.path.expanduser(default_dir)),
@@ -566,7 +512,7 @@ class MainGui(tk.Tk):
             pass
 
     def exportLineup(self):
-        default_dir = config["resource.dir_lineups"]
+        default_dir = self.gui_config.resource.dir_lineups
         file_path = filedialog.asksaveasfilename(
             title=u'导入到文件',
             initialdir=(os.path.expanduser(default_dir)),

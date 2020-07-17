@@ -1,4 +1,21 @@
 {
-  "character":"./resource/storage/character.db",
-  "lineup": "./resource/storage/lineup"
+  "component": {
+    "character": {
+      "type": "TABLE",
+      "major_key": "name",
+      "index": "default.character"
+    },
+    "equipment": {
+      "type": "TABLE",
+      "index": "default.equipment"
+    },
+    "state": {
+      "type": "TABLE",
+      "index": "default.state"
+    },
+    "lineup": {
+      "type": "DB",
+      "index": "default.lineup"
+    }
+  }
 }

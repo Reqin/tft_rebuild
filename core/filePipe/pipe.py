@@ -38,6 +38,30 @@ def __write_byte_with(path, func):
     f.close()
 
 
+def __add_byte_with(path, func):
+    f = __open_file(path, 'ab')
+    func(f)
+    f.close()
+
+
+def __touch(path):
+    if os.path.exists(path):
+        logger.error("创建失败，已存在的文件，文件路径：{}".format(path))
+        return True
+    else:
+        with open(path, "w") as f:
+            f.close()
+    return False
+
+
+def __clear(path):
+    if os.path.exists(path):
+        with open(path, "w") as f:
+            f.write("")
+    else:
+        logger.error("清空失败，文件不存在，文件路径：{}".format(path))
+
+
 def read_line(path):
     # 读取单行
     def func(f): return f.readline().decode('utf8')
@@ -50,6 +74,19 @@ def read_all(path):
     def func(f): return f.read().decode('utf8')
 
     return __read_byte_then(path, func)
+
+
+def add_line(path, line):
+    # 追加一行
+    def func(f): return f.write("{}\r\n".format(line).encode("utf8"))
+
+    return __add_byte_with(path, func)
+
+
+def update_line(path, line_no, line):
+    # 更改一行记录
+    def func(f):
+        pass
 
 
 def pkl_load(path):
