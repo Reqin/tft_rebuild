@@ -1,7 +1,0 @@
-{
-    "path_characters": "./resource/characters.pkl",
-    "path_equipments": "./resource/equipments.pkl",
-    "temporary_lineup": "./user/lineups/temporary.pkl",
-    "dir_lineups": "./user/lineups/",
-    "root_dir": "./"
-}
