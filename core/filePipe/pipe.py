@@ -42,6 +42,7 @@ def __add_byte_with(path, func):
     f = __open_file(path, 'ab')
     func(f)
     f.close()
+    return True
 
 
 def __touch(path):
@@ -58,8 +59,10 @@ def __clear(path):
     if os.path.exists(path):
         with open(path, "w") as f:
             f.write("")
+        return True
     else:
         logger.error("清空失败，文件不存在，文件路径：{}".format(path))
+        return False
 
 
 def read_line(path):

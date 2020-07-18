@@ -1,4 +1,8 @@
 {
+  "default_db_name": "default_db",
+  "default_table_name": "default_table",
   "path": "storage/db",
-  "suffix": ".db"
+  "suffix": ".db",
+  "swap_file_suffix": ".swap",
+  "encode_line": "!%&:?"
 }

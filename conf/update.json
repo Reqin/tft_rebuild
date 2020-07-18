@@ -1,0 +1,23 @@
+{
+  "driver_path": "storage/update/chromedriver_win32/chromedriver.exe",
+  "chrome_options": {
+    "debug": [
+
+    ],
+    "release": [
+      "--headless",
+      "--disable-gpu"
+    ]
+  },
+  "target": {
+    "lineup": {
+      "url": "https://lol.qq.com/tft/#/index"
+    },
+    "head": {
+      "url": "https://lol.qq.com/tft/#/simulator"
+    },
+    "equipment": {
+      "url": "https://lol.qq.com/tft/#/equipment"
+    }
+  }
+}

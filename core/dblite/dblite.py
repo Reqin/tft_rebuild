@@ -26,9 +26,9 @@ def is_empty_table(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         table = args[0]
-        if not table.data:
+        if not table.fields:
             logger.info("执行中止，不能对空表进行此操作，表名:{}，中断参数:{} -- {}，".format(table.name, args, kwargs))
-            return 0
+            return []
         else:
             return func(*args, **kwargs)
 
@@ -36,27 +36,24 @@ def is_empty_table(func):
 
 
 class Table:
-    swap_file_suffix = ".swap"
-
-    def __init__(self, path, name='table'):
-        """
-        :param path: 需要读取的 .db 文件路径
-        :self.data: 第一行为字段名，其余为值
-        """
-        self.name = name
-        self.__path = path
-        self.__swap_path = self.__path + self.swap_file_suffix
-        self.__encode_type = None
-        self.__decode_type = str
+    def __init__(self, config):
+        self.name = config.default_table_name
+        self.path = config.path
+        self.swap_file_suffix = config.swap_file_suffix
+        self.swap_path = self.path + self.swap_file_suffix
+        self.encode_type = list
+        self.decode_type = str
+        self.fields = []
         self.data = []
-        self.file_data = read_all(self.__path).strip().split(os.linesep)
-        self.fields = self.__decode(self.file_data[0])
-        if self.fields == ['']:
-            logger.info("读取到空表 path:{}".format(self.__path))
+        self.file_data = read_all(self.path).strip().split(os.linesep)
+        self.file_fields = self.file_data[0]
+        if not self.file_fields:
+            logger.info("读取到空表 path:{}".format(self.path))
         else:
+            self.fields = self.__decode(self.file_fields)
             try:
                 self.__load_data()
-                self.__encode_type = self.metadata
+                self.encode_type = self.metadata
             except ValueError as e:
                 logger.critical("数据表初始化失败，数据文件损坏，无法读取，错误:{}".format(e))
 
@@ -71,42 +68,59 @@ class Table:
                 else:
                     self.data.append(new_data)
             else:
-                logger.warning("表数据异常表:{} 数据:{}".format(self.name, file_line))
+                logger.warning("表数据异常表:{},数据:{}".format(self.name, file_line))
 
     # 将每一行的文件数据转为数据表数据
     def __encode(self, data):
-        if not isinstance(data, self.__encode_type):
-            logger.error("数据格式错误，数据:{},标准格式:{}".format(data, self.__encode_type))
+        if not isinstance(data, self.encode_type):
+            logger.error("数据格式错误，数据:{},标准格式:{}".format(data, self.encode_type))
             return False
         else:
             line = "{}".format(data[0])
             for one in data[1:]:
-                line += ":{}".format(one)
-            logger.debug(line)
+                line += "!&:{}".format(one)
             return line
 
     # 将一个数据表记录转为数据表文件标准格式
     def __decode(self, line):
-        if not isinstance(line, self.__decode_type):
-            logger.error("数据格式错误，数据:{},标准格式:{}".format(line, self.__decode_type))
+        if not isinstance(line, self.decode_type):
+            logger.error("数据格式错误，数据:{},标准格式:{}".format(line, self.decode_type))
             return False
         else:
-            return line.split(":")
+            return line.split("!&:")
 
     def __update_file(self):
-        touch(self.__swap_path)
-        clear(self.__swap_path)
+        touch(self.swap_path)
+        clear(self.swap_path)
         for data_line in self.data:
             file_line = self.__encode(data_line)
-            add_line(self.__swap_path, file_line)
+            add_line(self.swap_path, file_line)
         try:
-            os.remove(self.__path)
-            os.rename(self.__swap_path, self.__path)
+            os.remove(self.path)
+            os.rename(self.swap_path, self.path)
         except Exception as e:
-            logger.critical("更新失败，数据文件时出现异常，文件路径:{}，交换路径:{}".format(self.__path, self.__swap_path))
+            logger.critical("更新失败，数据文件时出现异常，文件路径:{}，交换路径:{}".format(self.path, self.swap_path))
 
-    def create(self, fields, values):
-        pass
+    def get_fields(self):
+        return self.fields
+
+    def create(self, fields):
+        if self.data:
+            logger.info("失败，无法在未清空的表中创建新表，表文件路径:{}".format(self.path))
+            return False
+        if add_line(self.path, self.__encode(fields)):
+            logger.info("成功，已创建表，表字段:{}".format(fields))
+
+    @is_empty_table
+    def clear(self):
+        if clear(self.path):
+            logger.info("成功，已清空表，表文件路径:{}".format(self.path))
+            self.data = []
+            self.encode_type = list
+            return True
+        else:
+            logger.info("失败，未清空表，文件异常，表文件路径:{}".format(self.path))
+            return False
 
     @is_empty_table
     def insert(self, fields, values):
@@ -126,7 +140,7 @@ class Table:
         else:
             line = self.__encode(new_data)
             if line:
-                add_line(self.__path, self.__encode(new_data))
+                add_line(self.path, self.__encode(new_data))
             else:
                 logger.warning("数据编码失败，数据:{}".format(new_data))
             self.data.append(new_data)
@@ -171,28 +185,40 @@ class Table:
     def delete(self, field, value):
         pass
 
+    @is_empty_table
     def all(self):
-        return self.data
+        return self.data[1:]
 
 
 def get_table(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        logger.debug(args)
         db = args[0]
         keys = args[1].split(".")
         # 切换数据表所在的数据库
         for key in keys[:-1]:
-            try:
-                db = db.dbs[key].dbs[key]
-            except KeyError as e:
-                logger.error("不存在的数据库索引:{}".format(args[1]))
-                return None
-        if keys[-1] not in db.keys():
+            if isinstance(db, DB):
+                if key in db.dbs:
+                    db = db.dbs[key]
+                else:
+                    logger.error("不存在的数据库索引:{}".format(args[1]))
+                    return False
+            else:
+                logger.critical("错误！数据异常，数据:{} 与 标准数据库数据{} 类型不匹配".format(db, DB))
+                return False
+        table_name = keys[-1]
+        if table_name in db.dbs.keys():
+            table = db.dbs[table_name]
+            if isinstance(table, Table):
+                return func(*args, **kwargs, table=table)
+            else:
+                logger.critical("错误！数据异常，数据:{} 与 标准数据表数据{} 类型不匹配".format(table, Table))
+                return False
+
+
+        else:
             logger.error("不存在的数据表索引:{}".format(args[1]))
             return None
-        table = db[keys[-1]]
-        return func(*args, **kwargs, table=table)
 
     return wrapper
 
@@ -203,10 +229,11 @@ class DB:
         2: "TABLE"
     }
 
-    def __init__(self, path, suffix, name="default_db"):
-        self.__path = path
-        self.__suffix = suffix
-        self.name = name
+    def __init__(self, config):
+        self.config = config
+        self.__path = config.path
+        self.__suffix = config.suffix
+        self.name = config.default_db_name
         self.dbs = {}
         self.__load_data()
 
@@ -214,12 +241,15 @@ class DB:
         self.dbs[self.name] = {}
         for item in os.listdir(self.__path):
             path = os.path.join(self.__path, item)
+            self.config.path = path
+            self.config.default_db_name = item
             if os.path.isdir(path):
-                self.dbs[item] = DB(path, self.__suffix, name=item)
+                self.dbs[item] = DB(self.config)
             else:
                 name, suffix = os.path.splitext(item)
+                self.config.default_table_name = name
                 if suffix == self.__suffix:
-                    self.dbs[self.name][name] = Table(path, name=name)
+                    self.dbs[name] = Table(self.config)
 
     @get_table
     def insert(self, index, fields, values, table=None):
@@ -232,13 +262,34 @@ class DB:
         return table.update(trait, change)
 
     @get_table
+    def get_fields(self, index, table=None):
+        del index
+        return table.get_fields()
+
+    @get_table
     def retrieve(self, index, field, value, table=None):
         del index
         return table.retrieve(field, value)
 
+    @get_table
     def delete(self, index, fields, value, table=None):
         pass
 
+    @get_table
+    def all_table_data(self, index, table=None):
+        del index
+        return table.all()
 
-__config = config_parser(config_init.db.path)
-default_db_engine = DB(__config.path, __config.suffix)
+    @get_table
+    def generate_table(self, index, fields, table=None):
+        del index
+        return table.create(fields)
+
+    @get_table
+    def clear_table(self, index, table=None):
+        del index
+        return table.clear()
+
+
+db_config = config_parser(config_init.db.path)
+default_db_engine = DB(db_config)

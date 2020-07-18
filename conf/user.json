@@ -38,10 +38,10 @@
           "x": 300,
           "y": 300
         },
-        "bgColor": {
+        "bg_color": {
           "default": "#203040"
         },
-        "fgColor": {
+        "fg_color": {
           "default": "#f0d264"
         }
       },
@@ -54,8 +54,8 @@
         "item": {
           "width": 76,
           "height": 58,
-          "bgColor": "#203040",
-          "fgColor": "#f0d264",
+          "bg_color": "#203040",
+          "fg_color": "#f0d264",
           "button": {
             "width": 76,
             "height": 28
@@ -72,7 +72,7 @@
             "negative": "THTHelper(未激活)"
           }
         },
-        "resizeble": {
+        "resizable": {
           "x": 0,
           "y": 0
         },
@@ -80,10 +80,10 @@
           "x": 0,
           "y": 0
         },
-        "bgColor": {
+        "bg_color": {
           "default": "#203040"
         },
-        "fgColor": {
+        "fg_color": {
           "default": "#f0d264"
         }
       },
@@ -96,8 +96,8 @@
         "item": {
           "width": 230,
           "height": 35,
-          "bgColor": "#0F1923",
-          "fgColor": "#f0d264",
+          "bg_color": "#0F1923",
+          "fg_color": "#f0d264",
           "image": {
             "width": 30,
             "height": 32
@@ -112,10 +112,10 @@
           "x": 0,
           "y": 252
         },
-        "bgColor": {
+        "bg_color": {
           "default": "#0F1923"
         },
-        "fgColor": {
+        "fg_color": {
           "default": "#f0d264"
         }
       },
@@ -140,7 +140,7 @@
           "x": 30,
           "y": 30
         },
-        "bgColor": {
+        "bg_color": {
           "default": "#0F1923"
         }
       }
@@ -161,7 +161,7 @@
         "title_text": {
           "default": "请输入你的用户KEY"
         },
-        "resizeble": {
+        "resizable": {
           "x": 0,
           "y": 0
         },
@@ -169,10 +169,10 @@
           "x": 300,
           "y": 300
         },
-        "bgColor": {
+        "bg_color": {
           "default": "#C7EDCC"
         },
-        "fgColor": {
+        "fg_color": {
           "default": "black"
         }
       },
@@ -185,7 +185,7 @@
         "title_text": {
           "default": "THTHelper"
         },
-        "resizeble": {
+        "resizable": {
           "x": 0,
           "y": 0
         },
@@ -193,10 +193,10 @@
           "x": 0,
           "y": 0
         },
-        "bgColor": {
+        "bg_color": {
           "default": "#142831"
         },
-        "fgColor": {
+        "fg_color": {
           "default": "#f0d264"
         }
       },
@@ -209,7 +209,7 @@
         "title_text": {
           "default": ""
         },
-        "resizeble": {
+        "resizable": {
           "x": 0,
           "y": 0
         },
@@ -217,10 +217,10 @@
           "x": 8,
           "y": 234
         },
-        "bgColor": {
+        "bg_color": {
           "default": "#0F1923"
         },
-        "fgColor": {
+        "fg_color": {
           "default": "#f0d264"
         }
       }

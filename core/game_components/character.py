@@ -1,29 +1,26 @@
-from core import default_db_engine
-from lib import config_init, config_parser
-from lib import logger
-from interface import implements
-from .component import Component
+from .component import Component, component_config
 
 
-class Character(implements(Component)):
+class Character(Component):
+    major_field = "name"
+    fields = [
+        "name",
+        "head_image",
+        "character_image",
+        "skill_1",
+        "skill_2",
+        "skill_3",
+        "skill_4",
+        "feature1",
+        "feature2",
+        "feature3",
+        "feature4",
+        "feature6",
+    ]
 
-    def __init__(self):
-        self.config = config_parser(config_init.game_component.path)
-        self.index = self.config.component.character.index
-        pass
-
-    def create(self, traits):
-        default_db_engine.insert(self.index, list(traits.keys()), list(traits.values()))
-        pass
-
-    def get(self, value):
-        return self.get_by_trait(self.config.major_key, value)
-
-    def get_by_trait(self, key, value):
-        return default_db_engine.retrieve(self.index, key, value)
-
-    def set_trait(self, key, value):
-        pass
+    def __init__(self, config):
+        self.index = config.index
 
 
-character = Character()
+character_config = component_config.character
+character = Character(character_config)

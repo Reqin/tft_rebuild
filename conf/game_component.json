@@ -1,21 +1,26 @@
 {
-  "component": {
-    "character": {
-      "type": "TABLE",
-      "major_key": "name",
-      "index": "default.character"
-    },
-    "equipment": {
-      "type": "TABLE",
-      "index": "default.equipment"
-    },
-    "state": {
-      "type": "TABLE",
-      "index": "default.state"
-    },
-    "lineup": {
-      "type": "DB",
-      "index": "default.lineup"
-    }
+  "character": {
+    "type": "TABLE",
+    "major_key": "name",
+    "index": "default.character"
+  },
+  "default_lineup": {
+    "type": "TABLE",
+    "major_key": "name",
+    "index": "default.default_lineup"
+  },
+  "equipment": {
+    "type": "TABLE",
+    "major_key": "name",
+    "index": "default.equipment"
+  },
+  "state": {
+    "type": "TABLE",
+    "major_key": "name",
+    "index": "default.state"
+  },
+  "lineups": {
+    "type": "DB",
+    "index": "default.lineup"
   }
 }

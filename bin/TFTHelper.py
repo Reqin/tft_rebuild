@@ -6,6 +6,6 @@ path = os.getcwd()
 sys.path.append(path)
 
 if __name__ == "__main__":
-    from core import app
+    from core import start
 
-    app.start()
+    start()

@@ -16,24 +16,25 @@ def start():
     #     exit()
     # logger.info("认证成功，进入主程序!")
 
-    mainGui = Thread(target=start_main_window)
-    mainGui.setDaemon(True)
-    mainGui.start()
+    main_gui = Thread(target=start_main_window)
+    main_gui.setDaemon(True)
+    main_gui.start()
 
     count = 0
     while True:
         count = count + 1
         if count > 100:
+            logger.critical("启动失败，主窗口无法启动，等待时间:{}".format(count))
             sys.exit(0)
         time.sleep(0.1)
-        if mainGui.is_alive():
+        if main_gui.is_alive():
             break
 
-    my_overseer = Thread(target=overseer)
-    my_overseer.setDaemon(True)
-    my_overseer.start()
+    # my_overseer = Thread(target=overseer)
+    # my_overseer.setDaemon(True)
+    # my_overseer.start()
 
     while True:
         time.sleep(0.5)
-        if not mainGui.is_alive():
+        if not main_gui.is_alive():
             sys.exit(0)
