@@ -3,12 +3,17 @@ from .component import Component, component_config
 
 class Equipment(Component):
     major_field = "name"
+
     fields = [
         "name",
-        "image",
-        "skill_1",
-        "skill_2",
-        "skill_3"
+        "img_path",
+        "type",
+        "statistics",
+        "skill",
+    ]
+
+    json_fields = [
+        "statistics"
     ]
 
     def __init__(self, config):

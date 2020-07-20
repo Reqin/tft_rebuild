@@ -1,26 +1,26 @@
 {
   "character": {
     "type": "TABLE",
-    "major_key": "name",
     "index": "default.character"
-  },
-  "default_lineup": {
-    "type": "TABLE",
-    "major_key": "name",
-    "index": "default.default_lineup"
   },
   "equipment": {
     "type": "TABLE",
-    "major_key": "name",
     "index": "default.equipment"
   },
   "state": {
     "type": "TABLE",
-    "major_key": "name",
     "index": "default.state"
   },
-  "lineups": {
+  "lineup": {
     "type": "DB",
     "index": "default.lineup"
+  },
+  "default_lineup": {
+    "type": "TABLE",
+    "index": "default.default_strategy"
+  },
+  "strategy": {
+    "type": "TABLE",
+    "index": "default.strategy"
   }
 }

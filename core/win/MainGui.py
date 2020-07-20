@@ -12,8 +12,8 @@ from PIL import ImageTk, Image
 from threading import Thread
 from core.state.state import get_state, set_state
 from core.win.ScrollFrame import ScrollableFrame
-from core.game_components import character as characters
-from core.game_components import default_lineup as temporary_lineup
+from core.game_components import character as character_controller
+from core.game_components import strategy
 from lib import logger
 from lib import config_init, config_parser
 
@@ -31,14 +31,14 @@ class MainGui(tk.Tk):
         # 初始化资源
         self.characters = []
         self.head_image = []
-        self.lineups = []
-        self.temporary_lineup = []
+        self.strategys = []
+        self.temporary_strategy = []
         # 加载资源
         self.load_resource()
         # 窗口资源初始化
         # self:主窗口
         # 当前阵容窗口
-        self.win_temporary_lineup = tk.Toplevel()
+        self.win_temporary_strategy = tk.Toplevel()
         # 装备列表窗口
         self.win_equipment_list = tk.Toplevel()
         # 窗口是否置顶
@@ -50,15 +50,15 @@ class MainGui(tk.Tk):
     def load_resource(self):
         self.load_characters()
         self.load_head_image()
-        self.load_lineups()
-        self.load_temporary_lineup()
+        self.load_strategys()
+        self.load_temporary_strategy()
 
     def load_characters(self):
-        self.characters = characters.all()
+        self.characters = character_controller.all()
 
     def load_head_image(self):
         for character in self.characters:
-            character_head_image_path = character.head_image
+            character_head_image_path = character.img_head_path
             photo = Image.open(character_head_image_path)
             photo = photo.resize((self.gui_config.default.win_main.item.photo.width,
                                   self.gui_config.default.win_main.item.photo.height),
@@ -66,11 +66,11 @@ class MainGui(tk.Tk):
             photo = ImageTk.PhotoImage(photo)
             self.head_image.append(photo)
 
-    def load_lineups(self):
+    def load_strategys(self):
         pass
 
-    def load_temporary_lineup(self):
-        self.temporary_lineup = temporary_lineup.all_characters()
+    def load_temporary_strategy(self):
+        self.temporary_strategy = temporary_strategy.all_characters()
 
     def build(self):
 
@@ -84,7 +84,7 @@ class MainGui(tk.Tk):
         # 主窗口
         self.build_win_main()
         # 当前阵容窗口
-        self.build_win_temporary_lineup(self.win_temporary_lineup)
+        self.build_win_temporary_strategy(self.win_temporary_strategy)
         # 装备概览窗口
         self.build_win_equipment_list(self.win_equipment_list)
         # 监听键盘
@@ -134,21 +134,21 @@ class MainGui(tk.Tk):
     def build_win_main_menu(self):
         menubar = tk.Menu(self)
         menubar.add_cascade(
-            label="显示已选", command=lambda: self.showWin(self.win_temporary_lineup)),
+            label="显示已选", command=lambda: self.showWin(self.win_temporary_strategy)),
         menubar.add_cascade(
-            label="隐藏已选", command=lambda: self.hide_win(self.win_temporary_lineup))
+            label="隐藏已选", command=lambda: self.hide_win(self.win_temporary_strategy))
         # 自定义阵容
-        lineupMenu = tk.Menu(menubar, tearoff=0)
-        menubar.add_cascade(label="自定义阵容", menu=lineupMenu)
-        lineupMenu.add_command(label='导入', command=self.import_lineup_from_file)
-        lineupMenu.add_command(label='导出', command=self.export_lineup)
-        lineupMenu.add_command(label='刷新', command=self.refresh_lineup)
-        lineupMenu.add_separator()
+        strategyMenu = tk.Menu(menubar, tearoff=0)
+        menubar.add_cascade(label="自定义阵容", menu=strategyMenu)
+        strategyMenu.add_command(label='导入', command=self.import_strategy_from_file)
+        strategyMenu.add_command(label='导出', command=self.export_strategy)
+        strategyMenu.add_command(label='刷新', command=self.refresh_strategy)
+        strategyMenu.add_separator()
         # TODO
-        lineupNames = []
-        for lineupName in lineupNames:
-            lineupMenu.add_command(
-                label=lineupName, command=lambda x=lineupName: self.import_lineup_from_name(x))
+        strategyNames = []
+        for strategyName in strategyNames:
+            strategyMenu.add_command(
+                label=strategyName, command=lambda x=strategyName: self.import_strategy_from_name(x))
 
         menubar.add_cascade(label="激活/冻结拿牌功能（快捷键：“F8 ”）",
                             command=self.change_state_then_title)
@@ -217,65 +217,65 @@ class MainGui(tk.Tk):
             )
         # self.isMainWinReady = True
 
-    def build_win_temporary_lineup(self, win_temporary_lineup):
-        win_temporary_lineup.overrideredirect(True)
-        win_temporary_lineup.attributes(
-            "-alpha", self.gui_config.default.win_temporary_lineup.alpha)
+    def build_win_temporary_strategy(self, win_temporary_strategy):
+        win_temporary_strategy.overrideredirect(True)
+        win_temporary_strategy.attributes(
+            "-alpha", self.gui_config.default.win_temporary_strategy.alpha)
         # 窗口大小
-        x = self.gui_config.default.win_temporary_lineup.x
-        y = self.gui_config.default.win_temporary_lineup.y
+        x = self.gui_config.default.win_temporary_strategy.x
+        y = self.gui_config.default.win_temporary_strategy.y
         gconf = str(x) + "x" + str(y)
-        win_temporary_lineup.geometry(gconf)
+        win_temporary_strategy.geometry(gconf)
         # 窗口偏移
-        gconf = "+" + str(self.gui_config.default.win_temporary_lineup.migration.x) + \
-                "+" + str(self.gui_config.default.win_temporary_lineup.migration.y)
-        win_temporary_lineup.geometry(gconf)
-        win_temporary_lineup.resizable(width=False, height=False)
-        self.win_temporary_lineup.grid_propagate(0)
-        self.win_temporary_lineup.grid()
+        gconf = "+" + str(self.gui_config.default.win_temporary_strategy.migration.x) + \
+                "+" + str(self.gui_config.default.win_temporary_strategy.migration.y)
+        win_temporary_strategy.geometry(gconf)
+        win_temporary_strategy.resizable(width=False, height=False)
+        self.win_temporary_strategy.grid_propagate(0)
+        self.win_temporary_strategy.grid()
 
         container_frame = tk.Frame(
-            win_temporary_lineup,
+            win_temporary_strategy,
             bg=self.gui_config.default.win_main.item.bg_color,
             width=x,
             height=y,
-            padx=self.gui_config.default.win_temporary_lineup.padx,
-            pady=self.gui_config.default.win_temporary_lineup.pady
+            padx=self.gui_config.default.win_temporary_strategy.padx,
+            pady=self.gui_config.default.win_temporary_strategy.pady
         )
         container_frame.grid_propagate(0)
         container_frame.grid()
 
-        win_temporary_lineup_frame = ScrollableFrame(
+        win_temporary_strategy_frame = ScrollableFrame(
             container_frame,
             width=x,
             height=y,
             highlightthickness=0,
             bg=self.gui_config.default.win_main.item.bg_color
         )
-        win_temporary_lineup_frame.grid()
-        self.build_win_temporary_lineup_items(win_temporary_lineup_frame)
+        win_temporary_strategy_frame.grid()
+        self.build_win_temporary_strategy_items(win_temporary_strategy_frame)
 
-    def build_win_temporary_lineup_items(self, frame):
-        for character in self.temporary_lineup:
+    def build_win_temporary_strategy_items(self, frame):
+        for character in self.temporary_strategy:
             self.select(character, flag=True)
 
     # 使用
-    # self.win_temporary_lineup_frame
-    def add_win_temporary_lineup_item(self, character):
-        item_width = self.gui_config.default.win_temporary_lineup.item.width
-        item_height = self.gui_config.default.win_temporary_lineup.item.height
-        bg_color = self.gui_config.default.win_temporary_lineup.item.bg_color
-        fg_color = self.gui_config.default.win_temporary_lineup.item.fg_color
-        item_image_width = self.gui_config.default.win_temporary_lineup.item.image.width
-        item_image_height = self.gui_config.default.win_temporary_lineup.item.image.height
+    # self.win_temporary_strategy_frame
+    def add_win_temporary_strategy_item(self, character):
+        item_width = self.gui_config.default.win_temporary_strategy.item.width
+        item_height = self.gui_config.default.win_temporary_strategy.item.height
+        bg_color = self.gui_config.default.win_temporary_strategy.item.bg_color
+        fg_color = self.gui_config.default.win_temporary_strategy.item.fg_color
+        item_image_width = self.gui_config.default.win_temporary_strategy.item.image.width
+        item_image_height = self.gui_config.default.win_temporary_strategy.item.image.height
         # 角色渲染区,当需要删除角色渲染时,删除item_frame,item_frame.destroy()
         item_frame = tk.Frame(
-            self.win_temporary_lineup_frame.scrollable_frame,
+            self.win_temporary_strategy_frame.scrollable_frame,
             width=item_width,
             height=item_height,
             bg=bg_color
         )
-        self.temporaryLineupItems[character.name] = item_frame
+        self.temporarystrategyItems[character.name] = item_frame
         item_frame.grid_propagate(0)
         item_frame.grid(pady=2)
 
@@ -296,7 +296,7 @@ class MainGui(tk.Tk):
             fg=fg_color,
             variable=state,
             command=lambda name=character.name, state=state: self.select(
-                self.temporaryLineupCharacter.resource[name], state)
+                self.temporarystrategyCharacter.resource[name], state)
         )
         nameLabel.grid(
             row=0,
@@ -344,8 +344,8 @@ class MainGui(tk.Tk):
                 column=next()
             )
 
-    def remove_win_temporary_lineup_item(self, character):
-        self.temporaryLineupItems[character.name].destroy()
+    def remove_win_temporary_strategy_item(self, character):
+        self.temporarystrategyItems[character.name].destroy()
         pass
 
     def build_win_equipment_list(self, win_equipment_list):
@@ -393,7 +393,7 @@ class MainGui(tk.Tk):
             #     }
 
             def replace_equipment(x, equipmentButton=button, newEquipmentName=name):
-                character = self.temporaryLineupCharacter.resource[self.focus["character.name"]]
+                character = self.temporarystrategyCharacter.resource[self.focus["character.name"]]
                 newEquipment = self.aLLEquipmentsEquipment.resource[newEquipmentName]
                 state = character.replace_equipment(
                     newEquipment, self.focus["location"])
@@ -444,7 +444,7 @@ class MainGui(tk.Tk):
                     time.sleep(0.01)
                 else:
                     self.flag_ws = False
-                    names = list(self.temporaryLineupCharacter.resource.keys())
+                    names = list(self.temporarystrategyCharacter.resource.keys())
                     if names is not []:
                         # 实现更加流畅的动画效果
                         names.reverse()
@@ -465,11 +465,11 @@ class MainGui(tk.Tk):
         if self.top:
             self.lift()
             self.attributes('-topmost', True)
-            self.win_temporary_lineup.lift()
-            self.win_temporary_lineup.attributes('-topmost', True)
+            self.win_temporary_strategy.lift()
+            self.win_temporary_strategy.attributes('-topmost', True)
         else:
             self.attributes('-topmost', False)
-            self.win_temporary_lineup.attributes('-topmost', False)
+            self.win_temporary_strategy.attributes('-topmost', False)
         self.buildMenu()
         # self.lower()
 
@@ -489,16 +489,16 @@ class MainGui(tk.Tk):
         state = 1 - state
         self.setStateThenTitle(state)
 
-    def refresh_lineup(self):
+    def refresh_strategy(self):
         self.buildMenu()
 
-    def import_lineup_from_name(self, name):
+    def import_strategy_from_name(self, name):
         pass
 
-    def import_lineup_from_file(self, file_path=""):
+    def import_strategy_from_file(self, file_path=""):
         pass
 
-    def export_lineup(self):
+    def export_strategy(self):
         pass
 
     # 键盘事件开始
@@ -533,13 +533,13 @@ class MainGui(tk.Tk):
             state = flag
         self.charactersState[self.characters.index(name)].set(state)
         if state:
-            if name not in self.temporaryLineupCharacter.resource.keys():
-                self.temporaryLineupCharacter.getAlly(character)
-                self.add_win_temporary_lineup_item(character)
+            if name not in self.temporarystrategyCharacter.resource.keys():
+                self.temporarystrategyCharacter.getAlly(character)
+                self.add_win_temporary_strategy_item(character)
         else:
-            if name in self.temporaryLineupCharacter.resource.keys():
-                self.temporaryLineupCharacter.loseAlly(character)
-                self.remove_win_temporary_lineup_item(character)
+            if name in self.temporarystrategyCharacter.resource.keys():
+                self.temporarystrategyCharacter.loseAlly(character)
+                self.remove_win_temporary_strategy_item(character)
             else:
                 log(" 尝试从队伍中删除不存在的角色 " + str(name))
-        tellEngine(self.temporaryLineupCharacter)
+        tellEngine(self.temporarystrategyCharacter)

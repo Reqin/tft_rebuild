@@ -13,6 +13,7 @@
         8. 为了更好的鲁棒性 尽量使得每个字段中的值简单化是一个明智的选择
 """
 import os
+import copy
 import collections
 from core.filePipe.pipe import read_all, add_line
 from core.filePipe.pipe import __touch as touch
@@ -37,10 +38,12 @@ def is_empty_table(func):
 
 class Table:
     def __init__(self, config):
+        self.index = config.index
         self.name = config.default_table_name
         self.path = config.path
         self.swap_file_suffix = config.swap_file_suffix
         self.swap_path = self.path + self.swap_file_suffix
+        self.metadata = None
         self.encode_type = list
         self.decode_type = str
         self.fields = []
@@ -50,15 +53,20 @@ class Table:
         if not self.file_fields:
             logger.info("读取到空表 path:{}".format(self.path))
         else:
-            self.fields = self.__decode(self.file_fields)
-            try:
+            fields = self.__decode(self.file_fields)
+            self.fields = fields
+            if self.fields:
                 self.__load_data()
-                self.encode_type = self.metadata
-            except ValueError as e:
-                logger.critical("数据表初始化失败，数据文件损坏，无法读取，错误:{}".format(e))
+
+            # try:
+            #     self.__load_data()
+            #
+            # except ValueError as e:
+            #     logger.critical("数据表初始化失败，数据文件损坏，无法读取，错误:{}".format(e))
 
     def __load_data(self):
-        self.metadata = collections.namedtuple(self.name, self.fields)
+        self.metadata = collections.namedtuple("TABLE", self.fields)
+        self.encode_type = self.metadata
         for file_line in self.file_data:
             data_line = self.__decode(file_line)
             if len(self.fields) == len(data_line):
@@ -68,7 +76,7 @@ class Table:
                 else:
                     self.data.append(new_data)
             else:
-                logger.warning("表数据异常表:{},数据:{}".format(self.name, file_line))
+                logger.warning("表数据异常，表:{},数据:{}".format(self.name, file_line))
 
     # 将每一行的文件数据转为数据表数据
     def __encode(self, data):
@@ -108,13 +116,18 @@ class Table:
         if self.data:
             logger.info("失败，无法在未清空的表中创建新表，表文件路径:{}".format(self.path))
             return False
-        if add_line(self.path, self.__encode(fields)):
+        self.fields = fields
+        self.__load_data()
+        # exit()
+        # self.data = []
+        if self.insert(fields, fields):
             logger.info("成功，已创建表，表字段:{}".format(fields))
 
     @is_empty_table
     def clear(self):
         if clear(self.path):
             logger.info("成功，已清空表，表文件路径:{}".format(self.path))
+            self.file_data = []
             self.data = []
             self.encode_type = list
             return True
@@ -140,10 +153,11 @@ class Table:
         else:
             line = self.__encode(new_data)
             if line:
-                add_line(self.path, self.__encode(new_data))
+                add_line(self.path, line)
             else:
                 logger.warning("数据编码失败，数据:{}".format(new_data))
             self.data.append(new_data)
+            logger.info("成功，插入数据，数据:{}".format(new_data))
             return 1
 
     # noinspection PyArgumentList
@@ -190,35 +204,41 @@ class Table:
         return self.data[1:]
 
 
-def get_table(func):
+def get_table(db, index):
+    keys = index.split(".")
+    # 切换数据表所在的数据库
+    for key in keys[:-1]:
+        if isinstance(db, DB):
+            if key in db.dbs:
+                db = db.dbs[key]
+            else:
+                logger.error("不存在的数据库索引:{}".format(index))
+                return False
+        else:
+            logger.critical("错误！数据异常，数据:{} 与 标准数据库数据{} 类型不匹配".format(db, DB))
+            return False
+    table_name = keys[-1]
+    if table_name in db.dbs.keys():
+        table = db.dbs[table_name]
+        if isinstance(table, Table):
+            return table
+        else:
+            logger.critical("错误！数据异常，数据:{} 与 标准数据表数据{} 类型不匹配".format(table, Table))
+            return False
+    else:
+        logger.error("不存在的数据表索引:{}".format(index))
+        return None
+    pass
+
+
+def auto_get_table(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         db = args[0]
-        keys = args[1].split(".")
-        # 切换数据表所在的数据库
-        for key in keys[:-1]:
-            if isinstance(db, DB):
-                if key in db.dbs:
-                    db = db.dbs[key]
-                else:
-                    logger.error("不存在的数据库索引:{}".format(args[1]))
-                    return False
-            else:
-                logger.critical("错误！数据异常，数据:{} 与 标准数据库数据{} 类型不匹配".format(db, DB))
-                return False
-        table_name = keys[-1]
-        if table_name in db.dbs.keys():
-            table = db.dbs[table_name]
-            if isinstance(table, Table):
-                return func(*args, **kwargs, table=table)
-            else:
-                logger.critical("错误！数据异常，数据:{} 与 标准数据表数据{} 类型不匹配".format(table, Table))
-                return False
-
-
-        else:
-            logger.error("不存在的数据表索引:{}".format(args[1]))
-            return None
+        index = args[1]
+        table = get_table(db, index)
+        if isinstance(table, Table):
+            return func(*args, **kwargs, table=table)
 
     return wrapper
 
@@ -230,7 +250,7 @@ class DB:
     }
 
     def __init__(self, config):
-        self.config = config
+        self.config = copy.deepcopy(config)
         self.__path = config.path
         self.__suffix = config.suffix
         self.name = config.default_db_name
@@ -238,57 +258,72 @@ class DB:
         self.__load_data()
 
     def __load_data(self):
+        config = copy.deepcopy(self.config)
         self.dbs[self.name] = {}
         for item in os.listdir(self.__path):
             path = os.path.join(self.__path, item)
-            self.config.path = path
-            self.config.default_db_name = item
+            config.path = path
+            config.default_db_name = item
             if os.path.isdir(path):
-                self.dbs[item] = DB(self.config)
+                self.dbs[item] = DB(config)
             else:
                 name, suffix = os.path.splitext(item)
-                self.config.default_table_name = name
+                config.default_table_name = name
                 if suffix == self.__suffix:
-                    self.dbs[name] = Table(self.config)
+                    self.dbs[name] = Table(config)
 
-    @get_table
+    @auto_get_table
     def insert(self, index, fields, values, table=None):
         del index
         return table.insert(fields, values)
 
-    @get_table
+    @auto_get_table
     def update(self, index, trait, change, table=None):
         del index
         return table.update(trait, change)
 
-    @get_table
+    @auto_get_table
     def get_fields(self, index, table=None):
         del index
         return table.get_fields()
 
-    @get_table
+    @auto_get_table
     def retrieve(self, index, field, value, table=None):
         del index
         return table.retrieve(field, value)
 
-    @get_table
+    @auto_get_table
     def delete(self, index, fields, value, table=None):
         pass
 
-    @get_table
+    @auto_get_table
     def all_table_data(self, index, table=None):
         del index
         return table.all()
 
-    @get_table
-    def generate_table(self, index, fields, table=None):
-        del index
-        return table.create(fields)
+    def generate_table(self, index, fields):
+        path = self.__path
+        path_trace = index.split(".")
+        for trace in path_trace:
+            path = os.path.join(path, trace)
+        path = path + self.__suffix
+        if not os.path.exists(path):
+            logger.info("执行中，未存在的文件，正在创建文件，路径:{}".format(path))
+            touch(path)
+            self.__load_data()
+        self.clear_table(index)
+        self.init_table(index, fields)
+        return index
 
-    @get_table
+    @auto_get_table
     def clear_table(self, index, table=None):
         del index
         return table.clear()
+
+    @auto_get_table
+    def init_table(self, index, fields, table=None):
+        del index
+        return table.create(fields)
 
 
 db_config = config_parser(config_init.db.path)

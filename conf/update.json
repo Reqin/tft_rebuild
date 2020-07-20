@@ -2,7 +2,6 @@
   "driver_path": "storage/update/chromedriver_win32/chromedriver.exe",
   "chrome_options": {
     "debug": [
-
     ],
     "release": [
       "--headless",
@@ -10,14 +9,22 @@
     ]
   },
   "target": {
-    "lineup": {
+    "strategy": {
       "url": "https://lol.qq.com/tft/#/index"
     },
-    "head": {
-      "url": "https://lol.qq.com/tft/#/simulator"
+    "character": {
+      "url": "https://lol.qq.com/tft/#/champion",
+      "image": {
+        "character": "storage/image/character",
+        "head": "storage/image/head"
+      }
     },
     "equipment": {
-      "url": "https://lol.qq.com/tft/#/equipment"
+      "url": "https://lol.qq.com/tft/#/equipment",
+      "image": {
+        "foundation": "storage/image/equipment/foundation",
+        "combination": "storage/image/equipment/combination"
+      }
     }
   }
 }

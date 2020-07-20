@@ -5,17 +5,17 @@ class Character(Component):
     major_field = "name"
     fields = [
         "name",
-        "head_image",
-        "character_image",
-        "skill_1",
-        "skill_2",
-        "skill_3",
-        "skill_4",
-        "feature1",
-        "feature2",
-        "feature3",
-        "feature4",
-        "feature6",
+        "skill",
+        "price",
+        "statistics",
+        "status",
+        "img_head_path",
+        "img_character_path"
+    ]
+
+    json_fields = [
+        "statistics",
+        "status",
     ]
 
     def __init__(self, config):

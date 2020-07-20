@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "disable_existing_loggers": 1,
+  "disable_existing_loggers": true,
   "incremental": 0,
   "formatters": {
     "simple": {
