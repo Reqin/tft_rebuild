@@ -17,7 +17,10 @@ def __open_file(path, open_type):
     try:
         if not os.path.exists(path):
             __create_file(path)
-        f = open(path, open_type)
+        if "w" in open_type:
+            f = open(path, open_type, encoding='utf8')
+        else:
+            f = open(path, open_type)
         return f
     except:
         log_info = ' fail to open ' + path

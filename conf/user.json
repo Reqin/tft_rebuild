@@ -50,12 +50,15 @@
         "y": 203,
         "alpha": 0.8,
         "winBar": 1,
-        "ico": "TFTHelper.ico",
+        "ico": "storage/user/image/icon/TFTHelper.ico",
         "item": {
-          "width": 76,
-          "height": 58,
+          "width": 90,
+          "height": 60,
           "bg_color": "#203040",
           "fg_color": "#f0d264",
+          "text": {
+            "max_len": 6
+          },
           "button": {
             "width": 76,
             "height": 28
@@ -72,6 +75,9 @@
             "negative": "THTHelper(未激活)"
           }
         },
+        "menu": {
+          "is_top": {}
+        },
         "resizable": {
           "x": 0,
           "y": 0
@@ -87,23 +93,46 @@
           "default": "#f0d264"
         }
       },
-      "win_temporary_lineup": {
-        "x": 230,
-        "y": 780,
+      "win_temporary_strategy": {
+        "width": 240,
+        "height": 780,
         "padx": 5,
         "pady": 5,
         "alpha": 0.8,
+        "title": {
+          "width": 230,
+          "height": 35,
+          "bg": {
+            "active": "#0f0f0f",
+            "passive": "#203040"
+          },
+          "fg": "#f0d264"
+        },
+        "early_lineup": {
+          "width": 230,
+          "height": 35
+        },
         "item": {
           "width": 230,
           "height": 35,
           "bg_color": "#0F1923",
           "fg_color": "#f0d264",
-          "image": {
-            "width": 30,
-            "height": 32
+          "text": {
+            "max_len": 8
+          },
+          "equipment": {
+            "name_default": "remove",
+            "type": {
+              "foundation": "foundation",
+              "combination": "combination"
+            },
+            "max_num": 3,
+            "image": {
+              "width": 30,
+              "height": 32
+            }
           }
         },
-        "equipment": {},
         "resizable": {
           "x": 0,
           "y": 0
@@ -120,16 +149,92 @@
         }
       },
       "win_equipments_list": {
-        "x": 292,
-        "y": 256,
+        "width": 252,
+        "height": 252,
         "alpha": 0.8,
-        "x_num": 8,
+        "max_x_num": 7,
+        "equipment": {
+          "name_default": "remove",
+          "type": {
+            "foundation": "foundation",
+            "combination": "combination"
+          }
+        },
         "empty": {
           "name": "404"
         },
         "item_frame": {
           "x": 36,
           "y": 36,
+          "pad": {
+            "x": 2,
+            "y": 2
+          },
+          "num_one_line": 8
+        },
+        "image_size": {
+          "x": 30,
+          "y": 30
+        },
+        "bg_color": {
+          "default": "#0F1923"
+        }
+      },
+      "win_equipment_info": {
+        "width": 260,
+        "height": 260,
+        "line_span": {
+          "height": 3,
+          "color": "black"
+        },
+        "alpha": 0.8,
+        "fg": "#203040",
+        "bg": "#f0d264",
+        "equipment": {
+          "name_default": "remove",
+          "type": {
+            "foundation": "foundation",
+            "combination": "combination"
+          }
+        },
+        "skill_frame": {
+          "width": 200,
+          "height": 200,
+          "pad": {
+            "x": 2,
+            "y": 2
+          },
+          "num_one_line": 8
+        },
+        "image_size": {
+          "x": 30,
+          "y": 30
+        },
+        "bg_color": {
+          "default": "#0F1923"
+        }
+      },
+      "win_character_info": {
+        "width": 260,
+        "height": 260,
+        "line_span": {
+          "height": 5,
+          "color": "#0e1023"
+        },
+        "alpha": 0.8,
+        "fg": "#203040",
+        "bg": "#f0d264",
+        "title": {
+          "width": 260,
+          "height": 38
+        },
+        "cost": {
+          "width": 260,
+          "height": 26
+        },
+        "skill_frame": {
+          "width": 200,
+          "height": 200,
           "pad": {
             "x": 2,
             "y": 2

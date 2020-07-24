@@ -1,5 +1,4 @@
 from core.winApi.winApi import get_win_cap, get_win_handle, get_win_pos, mouse_left_click
-from core.image.image import imgCompare
 import time
 from core.state.state import get_state
 from lib import logger
@@ -42,7 +41,6 @@ def shot(i, handle):
     mouse_left_click(x, y)
 
 
-from core.image.image import PIL2cv
 
 
 def doIt(handle, characterHandle):

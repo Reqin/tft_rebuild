@@ -1,4 +1,4 @@
-from .dblite.dblite import DB, default_db_engine
+from .dblite import DB, default_db_engine
 
 from .app import start
 

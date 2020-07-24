@@ -1,8 +1,9 @@
 from .component import Component, component_config
 from .character import character as character_controller
+from .character import Character
 from .equipment import equipment as equipment_controller
+import collections
 from lib import logger
-from core import default_db_engine
 import copy
 
 
@@ -17,10 +18,8 @@ class Lineup(Component):
         "character"
     ]
 
-    equipment_fields = [
-        "equipment_1",
-        "equipment_2",
-        "equipment_3"
+    json_fields = [
+        "equipment"
     ]
 
     def __init__(self, config):
@@ -36,6 +35,19 @@ class Lineup(Component):
             equipments = [equipment_controller.get(equipment_name) for equipment_name in equipments_name if
                           equipment_name]
             logger.debug(equipments_name)
+
+    def lose_ally(self, lineup_index, ally_name) -> str:
+        self.index = lineup_index
+        ally = self.lose(ally_name)
+        if ally:
+            ally_name = ally.character
+        else:
+            return ""
+        return ally_name
+
+    def update_lineup_ally(self, index, ally_name, data):
+        self.index = index
+        return self.update(data, ally_name)
 
 
 class LineupController:

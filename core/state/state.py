@@ -9,8 +9,8 @@ __name = __config.gui.name
 
 
 def set_state(state):
-    return default_db_engine.update(__index, [__major_key, __name], ["state", state])
+    return default_db_engine.update(__index, [__major_key, __name], {"state": state})
 
 
 def get_state():
-    return default_db_engine.retrieve(__index, __major_key, __name)
+    return default_db_engine.retrieve(__index, __major_key, __name).pop()[1]

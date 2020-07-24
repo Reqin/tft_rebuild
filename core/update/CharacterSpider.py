@@ -6,7 +6,6 @@ import os
 from .downloader import download
 
 
-
 class CharacterSpider(Spider):
     index = "character"
 
@@ -89,17 +88,20 @@ class CharacterSpider(Spider):
             download(img_head_path, character_img_head_url)
             logger.info("执行中，正在下载资源，url:{},path:{}".format(character_img_head_url, img_head_path))
             # self.wait()
+            import json
 
             # 整理数据
             character_data["name"] = character_name
             character_data["skill"] = character_skill
             character_data["price"] = character_price
             character_data["statistics"] = character_statistics
+            # logger.debug()
             character_data["status"] = character_status
             character_data["img_head_path"] = img_head_path
             character_data["img_character_path"] = img_character_path
             print(character_data)
             character.new(character_data)
+            self.wait(0.5)
             back_btn = self.browser.find_element_by_class_name("icon-arrow-right")
             back_btn.click()
         self.wait()

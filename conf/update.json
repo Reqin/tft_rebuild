@@ -2,6 +2,8 @@
   "driver_path": "storage/update/chromedriver_win32/chromedriver.exe",
   "chrome_options": {
     "debug": [
+      "--headless",
+      "--disable-gpu"
     ],
     "release": [
       "--headless",

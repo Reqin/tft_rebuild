@@ -10,9 +10,11 @@ class Equipment(Component):
         "type",
         "statistics",
         "skill",
+        "components"
     ]
 
     json_fields = [
+        "components",
         "statistics"
     ]
 

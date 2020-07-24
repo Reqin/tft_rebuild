@@ -44,35 +44,46 @@ class EquipmentSpider(Spider):
             equipment_desc = self.get_hover_equipment_desc()
             equipment_img_url = item.get_attribute("src")
             equipment_img_path = os.path.join(img_foundation_dir, "{}.png".format(equipment_name))
-            download(equipment_img_path, equipment_img_url)
+            # download(equipment_img_path, equipment_img_url)
             logger.info("执行中，正在下载资源，url:{},path:{}".format(equipment_img_url, equipment_img_path))
             # 数据整理
             equipment_item["name"] = equipment_name
             equipment_item["type"] = "foundation"
             equipment_item["img_path"] = equipment_img_path
             equipment_item["statistics"] = [equipment_desc]
+            # equipment_item["components"] = []
             equipment_item["skill"] = ""
-            print(equipment_item)
-            self.wait(1)
             equipment.new(equipment_item)
         # 成型装备
         switch_buttons[1].click()
         equipment_list = self.browser.find_element_by_class_name("equipment-list").find_elements_by_tag_name("img")
         equipment_item = {}
         for item in equipment_list:
+            # 成品装备数据
             self.hover(item)
             equipment_name = self.get_hover_equipment_name()
             equipment_desc = self.get_hover_equipment_desc()
             equipment_img_url = item.get_attribute("src")
             equipment_img_path = os.path.join(img_combination_dir, "{}.png".format(equipment_name))
-            download(equipment_img_path, equipment_img_url)
+            # download(equipment_img_path, equipment_img_url)
             logger.info("执行中，正在下载资源，url:{},path:{}".format(equipment_img_url, equipment_img_path))
+            # 组成成装的小件
+            item.click()
+            component_equipments_name = []
+            component_equipment_block = self.browser.find_element_by_class_name("equip-formula-flex")
+            component_equipments = component_equipment_block.find_elements_by_class_name("component-equipment")
+            for component_equipment in component_equipments:
+                self.hover(component_equipment)
+                component_equipment_name = self.get_hover_equipment_name()
+                component_equipments_name.append(component_equipment_name)
+            logger.debug(component_equipments_name)
             # 数据整理
             equipment_item["name"] = equipment_name
             equipment_item["type"] = "combination"
             equipment_item["img_path"] = equipment_img_path
             equipment_item["statistics"] = []
             equipment_item["skill"] = equipment_desc
+            equipment_item["components"] = component_equipments_name
             equipment.new(equipment_item)
 
         self.wait()

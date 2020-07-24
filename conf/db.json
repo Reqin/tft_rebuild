@@ -3,6 +3,7 @@
   "default_table_name": "default_table",
   "path": "storage/db",
   "suffix": ".db",
+  "index": "",
   "swap_file_suffix": ".swap",
   "encode_line": "!%&:?"
 }

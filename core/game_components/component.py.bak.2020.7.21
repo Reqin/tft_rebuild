@@ -1,0 +1,144 @@
+from lib import config_init, config_parser
+from core import default_db_engine
+from lib import logger
+from functools import wraps
+import json
+import copy
+
+
+def check_fields(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        component = args[0]
+        data = args[1]
+        data_fields = data.keys()
+        for field in data_fields:
+            if field not in component.fields:
+                logger.warning("执行中止，存在不匹配的字段，输入字段:{} 声明字段:{}".format(field, component.fields))
+                return False
+        return func(*args, **kwargs)
+
+    return wrapper
+
+
+def check_component_fields(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        component = args[0]
+        data = args[1]
+        if component.major_field in data.keys():
+            for component_worker_name in component.component_workers.keys():
+                if not isinstance(component.component_workers[component_worker_name], Component):
+                    new_component_object, new_component_config = component.component_workers[component_worker_name]
+                    new_component_config.index = new_component_config.index.format(data[component.major_field])
+                    component_worker = new_component_object(new_component_config)
+                    component.component_workers[component_worker_name] = component_worker
+                    res = component_worker.is_established()
+                    if res == -1:
+                        component_worker.establish()
+        return func(*args, **kwargs)
+
+    return wrapper
+
+
+component_config = config_parser(config_init.game_component.path)
+
+
+class Component:
+    major_field = ""
+    fields = []
+    lineup_fields = []
+    json_fields = []
+    component_fields = [
+        {
+            # "field_name"：field_name
+            # "object":Object implemented Component
+            # "args" :[
+            #   args for new object_table
+            # ]
+        }
+        # ...
+    ]
+
+    def __init__(self):
+        self.component_workers = dict()
+        self.load_components_by_field()
+
+    def load_components_by_field(self):
+        for component_field in self.component_fields:
+            new_component_config = component_config.__getattr__(component_field["config_index"])
+            if new_component_config.type == "DB":
+                new_component_config.index = "{}.{}_{}".format(
+                    new_component_config.index, "{}", component_field["field_name"])
+                self.component_workers[component_field["field_name"]] = [
+                    component_field["object"],
+                    new_component_config,
+                ]
+            elif new_component_config.type == "TABLE":
+                component_worker = component_field["object"](new_component_config)
+                self.component_workers[component_field["field_name"]] = component_worker
+
+    @check_component_fields
+    @check_fields
+    def new(self, data):
+        data_value = []
+        for filed in self.fields:
+            if filed in data.keys():
+                value = data[filed]
+            else:
+                value = ""
+            if filed in self.component_workers.keys():
+                value = self.component_workers[filed].follow_new(value)
+            data_value.append(value)
+        return default_db_engine.insert(self.index, self.fields, data_value)
+
+    def parse_field(self, record):
+        record = record._asdict()
+        for field in record.keys():
+            if field in self.json_fields:
+                try:
+                    record[field] = json.loads(record[field])
+                except json.decoder.JSONDecodeError:
+                    logger.critical("错误！，json解析时数据未初始化，数据:{}".format(record[field]))
+            if field in self.component_workers.keys():
+                return self.component_workers[field].all()
+        return record
+
+    @check_component_fields
+    @check_fields
+    def get_by_filed(self, data):
+        cache_records = []
+        field, value = data.popitem()
+        records = default_db_engine.retrieve(self.index, field, value)
+        for record in records:
+            parsed_record = self.parse_field(record)
+            cache_records.append(parsed_record)
+        if len(cache_records) <= 0:
+            logger.info("执行完毕，没有查询到记录,参数:{}".format(data))
+            return [False]
+        return cache_records
+
+    @check_component_fields
+    def establish(self):
+        return default_db_engine.generate_table(self.index, self.fields)
+
+    def is_established(self):
+        return default_db_engine.find_table(self.index, self.fields)
+
+    def destroy(self):
+        return default_db_engine.clear_table(self.index)
+
+    @check_component_fields
+    def reestablish(self):
+        self.destroy()
+        self.establish()
+
+    def all(self):
+        return default_db_engine.all_table_data(self.index)
+
+    def get(self, value):
+        return self.get_by_filed({self.major_field: value}).pop()
+
+    # @staticmethod
+    def follow_new(self, data):
+        return ""

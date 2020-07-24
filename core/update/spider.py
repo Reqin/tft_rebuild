@@ -49,6 +49,7 @@ class Spider:
 
     def hover(self, element):
         webdriver.ActionChains(self.browser).move_to_element(element).perform()
+        self.wait(0.1)
 
     def quit(self):
         self.browser.quit()

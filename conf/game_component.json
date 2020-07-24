@@ -1,4 +1,8 @@
 {
+  "default_component": {
+    "type": "UNKNOWN",
+    "index": ""
+  },
   "character": {
     "type": "TABLE",
     "index": "default.character"
@@ -17,10 +21,15 @@
   },
   "default_lineup": {
     "type": "TABLE",
-    "index": "default.default_strategy"
+    "index": "default.lineupdefault_lineup"
   },
   "strategy": {
     "type": "TABLE",
     "index": "default.strategy"
+  },
+  "temporary_strategy": {
+    "type": "RECORD",
+    "index": "default.strategy",
+    "record_index": "默认"
   }
 }

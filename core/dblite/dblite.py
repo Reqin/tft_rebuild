@@ -26,10 +26,11 @@ from lib import config_init, config_parser
 def is_empty_table(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
+        args = copy.copy(args)
         table = args[0]
         if not table.fields:
             logger.info("执行中止，不能对空表进行此操作，表名:{}，中断参数:{} -- {}，".format(table.name, args, kwargs))
-            return []
+            return -1
         else:
             return func(*args, **kwargs)
 
@@ -48,6 +49,9 @@ class Table:
         self.decode_type = str
         self.fields = []
         self.data = []
+        self.__load_data()
+
+    def __load_data(self):
         self.file_data = read_all(self.path).strip().split(os.linesep)
         self.file_fields = self.file_data[0]
         if not self.file_fields:
@@ -55,16 +59,8 @@ class Table:
         else:
             fields = self.__decode(self.file_fields)
             self.fields = fields
-            if self.fields:
-                self.__load_data()
-
-            # try:
-            #     self.__load_data()
-            #
-            # except ValueError as e:
-            #     logger.critical("数据表初始化失败，数据文件损坏，无法读取，错误:{}".format(e))
-
-    def __load_data(self):
+            if not self.fields:
+                return
         self.metadata = collections.namedtuple("TABLE", self.fields)
         self.encode_type = self.metadata
         for file_line in self.file_data:
@@ -77,6 +73,9 @@ class Table:
                     self.data.append(new_data)
             else:
                 logger.warning("表数据异常，表:{},数据:{}".format(self.name, file_line))
+
+    def refresh(self):
+        self.__load_data()
 
     # 将每一行的文件数据转为数据表数据
     def __encode(self, data):
@@ -156,30 +155,32 @@ class Table:
                 add_line(self.path, line)
             else:
                 logger.warning("数据编码失败，数据:{}".format(new_data))
+                return False
             self.data.append(new_data)
-            logger.info("成功，插入数据，数据:{}".format(new_data))
-            return 1
+            logger.info("成功，插入数据，表索引:{},数据:{}".format(self.index, new_data))
+            return True
 
     # noinspection PyArgumentList
     @is_empty_table
     def update(self, trait, change):
         old_records = self.retrieve(*trait)
         if not old_records:
+            logger.warning("警告，不存在旧记录:{}".format(old_records))
             return None
         new_records = []
         for old_record in old_records:
             new_value = []
             for field in self.fields:
-                if field != change[0]:
+                if field not in change.keys():
                     new_value.append(old_record.__getattribute__(field))
                 else:
-                    new_value.append(change[1])
+                    new_value.append(change[field])
             new_record = self.metadata(*new_value)
             new_records.append(new_record)
             self.data[self.data.index(old_record)] = new_record
         if new_records != old_records:
             self.__update_file()
-            return 1
+            return new_records
         else:
             logger.info("已动作，数据无变化，旧记录:{}，新记录:{}".format(old_records, new_records))
             return 0
@@ -190,14 +191,19 @@ class Table:
         if field not in self.fields:
             logger.warning("在字段 {} 中查询不存在的字段: {}".format(self.fields, field))
         else:
-            records = [one for one in self.data if one.__getattribute__(field) == value]
+            records = [record for record in self.data if record.__getattribute__(field) == value]
             if not records:
                 logger.info("字段 {} 中未查询到数据: {}".format(field, value))
         return records
 
     @is_empty_table
-    def delete(self, field, value):
-        pass
+    def delete(self, namedtuple_item):
+        if namedtuple_item in self.data:
+            self.data.remove(namedtuple_item)
+            self.__update_file()
+            logger.info("成功，删除表数据，表:{},数据:{}".format(self.index, namedtuple_item))
+        else:
+            logger.warning("失败，尝试删除不存在的数据，表:{},数据:{}".format(self.index, namedtuple_item))
 
     @is_empty_table
     def all(self):
@@ -211,6 +217,7 @@ def get_table(db, index):
         if isinstance(db, DB):
             if key in db.dbs:
                 db = db.dbs[key]
+                # logger.info("成功，已读取数据库，索引:{}".format(db.index))
             else:
                 logger.error("不存在的数据库索引:{}".format(index))
                 return False
@@ -221,6 +228,7 @@ def get_table(db, index):
     if table_name in db.dbs.keys():
         table = db.dbs[table_name]
         if isinstance(table, Table):
+            logger.info("成功，已读取数据表，索引:{}".format(table.index))
             return table
         else:
             logger.critical("错误！数据异常，数据:{} 与 标准数据表数据{} 类型不匹配".format(table, Table))
@@ -231,14 +239,49 @@ def get_table(db, index):
     pass
 
 
+def set_table(db, index, new_table):
+    if not isinstance(new_table, Table):
+        logger.critical("错误！数据异常，数据:{} 与 标准数据表数据{} 类型不匹配".format(new_table, Table))
+        return
+    keys = index.split(".")
+    # 切换数据表所在的数据库
+    for key in keys[:-1]:
+        if isinstance(db, DB):
+            if key in db.dbs:
+                db = db.dbs[key]
+                # logger.info("成功，已读取数据库，索引:{}".format(db.index))
+            else:
+                logger.error("不存在的数据库索引:{}".format(index))
+                return False
+        else:
+            logger.critical("错误！数据异常，数据:{} 与 标准数据库数据{} 类型不匹配".format(db, DB))
+            return False
+    table_name = keys[-1]
+    if table_name in db.dbs.keys():
+        old_table = db.dbs[table_name]
+        if isinstance(old_table, Table):
+            logger.info("成功，已读取数据表，索引:{}".format(old_table.index))
+            db.dbs[table_name] = new_table
+            return True
+        else:
+            logger.critical("错误！数据异常，数据:{} 与 标准数据表数据{} 类型不匹配".format(old_table, Table))
+            return False
+    else:
+        logger.error("不存在的数据表索引:{}".format(index))
+        return False
+
+
 def auto_get_table(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
+        args = copy.copy(args)
         db = args[0]
         index = args[1]
         table = get_table(db, index)
         if isinstance(table, Table):
             return func(*args, **kwargs, table=table)
+        else:
+            return -1
 
     return wrapper
 
@@ -251,6 +294,7 @@ class DB:
 
     def __init__(self, config):
         self.config = copy.deepcopy(config)
+        self.index = self.config.index
         self.__path = config.path
         self.__suffix = config.suffix
         self.name = config.default_db_name
@@ -259,18 +303,27 @@ class DB:
 
     def __load_data(self):
         config = copy.deepcopy(self.config)
-        self.dbs[self.name] = {}
+        db_index = config.index
         for item in os.listdir(self.__path):
             path = os.path.join(self.__path, item)
             config.path = path
             config.default_db_name = item
             if os.path.isdir(path):
+                if not db_index:
+                    db_index = item
+                else:
+                    db_index = "{}.{}".format(db_index, item)
+                config.index = db_index
                 self.dbs[item] = DB(config)
+                logger.info("成功，已加载库，索引:{}".format(db_index))
             else:
                 name, suffix = os.path.splitext(item)
-                config.default_table_name = name
                 if suffix == self.__suffix:
+                    config.default_table_name = name
+                    table_index = "{}.{}".format(db_index, name)
+                    config.index = table_index
                     self.dbs[name] = Table(config)
+                    logger.info("成功，已加载表，索引:{}".format(table_index))
 
     @auto_get_table
     def insert(self, index, fields, values, table=None):
@@ -283,6 +336,12 @@ class DB:
         return table.update(trait, change)
 
     @auto_get_table
+    def refresh_table(self, index, table=None):
+        new_table = table.refresh()
+        set_table(self, index, new_table)
+        return True
+
+    @auto_get_table
     def get_fields(self, index, table=None):
         del index
         return table.get_fields()
@@ -293,8 +352,8 @@ class DB:
         return table.retrieve(field, value)
 
     @auto_get_table
-    def delete(self, index, fields, value, table=None):
-        pass
+    def delete(self, index, namedtuple_item, table=None):
+        return table.delete(namedtuple_item)
 
     @auto_get_table
     def all_table_data(self, index, table=None):

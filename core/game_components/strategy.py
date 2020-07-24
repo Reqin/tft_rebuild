@@ -1,8 +1,7 @@
 from .component import Component, component_config
-from .lineup import LineupController
+from .lineup import LineupController, Lineup
 from lib import logger
 import json
-import copy
 
 
 class Strategy(Component):
@@ -26,12 +25,13 @@ class Strategy(Component):
 
     def __init__(self, config):
         self.index = config.index
+        logger.debug(self.index)
 
     def record(self, strategy):
         assert isinstance(strategy, dict) and strategy.get(self.major_field, False), "契约错误"
         strategy_data = dict()
+
         for field in self.fields:
-            data = ""
             if field in self.lineup_fields:
                 lineup_name = "{}_{}".format(strategy[self.major_field], field)
                 lineup_index, record_line_count = LineupController.record_lineup(lineup_name, strategy.get(field, ""))
@@ -43,9 +43,6 @@ class Strategy(Component):
                     data = json.dumps(data, ensure_ascii=False)
             strategy_data[field] = data
         self.new(strategy_data)
-
-    # def get(self):
-    #     return
 
 
 strategy_config = component_config.strategy
