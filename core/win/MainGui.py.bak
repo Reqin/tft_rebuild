@@ -4,8 +4,6 @@ import time
 import PyHook3
 import pythoncom
 import tkinter as tk
-import tkinter.messagebox as msgBox
-import requests
 from PIL import ImageTk, Image
 from threading import Thread
 from core.state.state import set_state, set_lineup_state
@@ -19,8 +17,6 @@ from lib import config_init, config_parser
 from core.game_components import component_config
 from core.winApi import get_cursor_pos
 import tkinter.font as tf
-import win32api, win32con
-from core.filePipe.pipe import read_all
 
 
 def start_main_window():
@@ -35,13 +31,9 @@ def t_font(family="", **kwargs):
 class MainGui(tk.Tk):
     def __init__(self):
         super().__init__()
-        # 设置状态
-        set_state(0)
         # 加载配置文件
         self.gui_config = config_parser(config_init.user.path).gui
         # 初始化资源
-        # cache some
-        self.cache_some = []
         # 这里是所有的人物资源
         self.characters = dict()
         # 用作存储全局的人物头像
@@ -78,12 +70,10 @@ class MainGui(tk.Tk):
 
         # 初始化窗口
         # 主窗口
-        self.hide_win(self)
         # 主窗口所有角色按钮
         self.character_check_button = dict()
         # 当前阵容窗口
         self.win_temporary_strategy = tk.Toplevel()
-        self.hide_win(self.win_temporary_strategy)
         # 当前阵容窗口标题栏
         self.win_temporary_strategy_titles = {
             "early_lineup": None,
@@ -144,11 +134,6 @@ class MainGui(tk.Tk):
                 },
             ]
         }
-        # 生成策略时询问策略名称窗口
-        self.win_new_strategy_name = tk.Toplevel()
-        self.hide_win(self.win_new_strategy_name)
-        # 生成阵容名称输入框
-        self.win_new_strategy_name_entry = None
         # 在lineup中最近一次点击的ally元素，其中包含character.name和equipment_button
         self.focus_ally = dict()
         # 窗口是否置顶
@@ -158,19 +143,8 @@ class MainGui(tk.Tk):
         # 用于判断当前窗口是否置顶
         self.is_win_topmost = False
         self.build()
-        # 认证窗口
-        self.win_auth = tk.Toplevel()
-        self.hide_win(self.win_auth)
-        self.after(5, self.auth)
-
-    def auth_success(self):
-        self.win_auth.destroy()
-        # 激活主窗口
-        self.active()
-        # 显示主窗口
-        self.show_win(self)
-        # 显示当前阵容窗口
-        self.show_win(self.win_temporary_strategy)
+        # 用于展示的窗口
+        self.update()
 
     def load_resource(self):
         self.load_characters()
@@ -214,17 +188,13 @@ class MainGui(tk.Tk):
             _dict_data[one.character] = one
         return _dict_data
 
-    def load_temporary_strategy(self, name=None):
-        temporary_strategy_name = component_config.temporary_strategy.major_filed_value
-        temporary_strategy = strategy.get(temporary_strategy_name)
+    def load_temporary_strategy(self):
+        temporary_strategy = strategy.get(component_config.temporary_strategy.record_index)
+        # 默认阵容文件初始化
         if not temporary_strategy:
             logger.warning("执行中，默认阵容未初始化，开始初始化:{}".format(component_config.temporary_strategy.record_index))
-            strategy.record({strategy.major_field: component_config.temporary_strategy.major_filed_value})
+            strategy.record({strategy.major_field: component_config.temporary_strategy.record_index})
             self.load_temporary_strategy()
-        if name and (new_temporary_strategy := strategy.get(name)):
-            strategy.copy_strategy(new_temporary_strategy, temporary_strategy)
-            strategy.update({"thinking": new_temporary_strategy.thinking}, temporary_strategy_name)
-            temporary_strategy = strategy.get(temporary_strategy_name)
         # 前期阵容
         lineup_controller.index = temporary_strategy.early_lineup
         self.lineup_index["early_lineup"] = temporary_strategy.early_lineup
@@ -285,19 +255,8 @@ class MainGui(tk.Tk):
         self.click_strategy_frame_title("final_lineup")
         # 监听键盘
         # self.listenKeyboard()
-
-    def destroy_temporary_strategy_items(self):
-        for item in self.win_temporary_strategy_content_frames["early_lineup"]["items"].values():
-            item.destroy()
-        for item in self.win_temporary_strategy_content_frames["mid_term_lineup"]["items"].values():
-            item.destroy()
-        for item in self.win_temporary_strategy_content_frames["final_lineup"]["items"].values():
-            item.destroy()
-        self.win_temporary_strategy_content_frames["thinking"]["text"].destroy()
-
-    def build_strategy_items(self):
-        self.build_lineups_frame()
-        self.build_thinking_text_frame()
+        # 激活主
+        self.active()
 
     def build_lineups_frame(self):
         for lineup_name in self.temporary_strategy["lineups"]:
@@ -317,7 +276,7 @@ class MainGui(tk.Tk):
         fg = self.gui_config.default.win_temporary_strategy.title.fg
         # 运营思路文本
         thinking_text = tk.Label(
-            thinking_frame,
+            thinking_frame.scrollable_frame,
             text=self.temporary_strategy["thinking"],
             bg=bg,
             fg=fg,
@@ -352,6 +311,7 @@ class MainGui(tk.Tk):
         self.resizable(width=self.gui_config.default.win_main.resizable.x,
                        height=self.gui_config.default.win_main.resizable.y)
         # 动态布局计算
+        # 或许不该使用动态计算的布局,而是把布局全做进配置文件中
         item_frame_width = self.gui_config.default.win_main.item.width
         pad_x = (width % item_frame_width) // 2
         bg_frame = tk.Frame(self,
@@ -380,22 +340,22 @@ class MainGui(tk.Tk):
             label="显示已选", command=lambda: self.show_win(self.win_temporary_strategy)),
         win_main_menu.add_cascade(
             label="隐藏已选", command=lambda: self.hide_win(self.win_temporary_strategy))
-        win_main_menu.add_cascade(
-            label="全部取消", command=lambda: self.reject_all())
         # 自定义阵容
         strategy_menu = tk.Menu(win_main_menu, tearoff=0)
         win_main_menu.add_cascade(label="自定义阵容", menu=strategy_menu)
-        strategy_menu.add_command(label='生成阵容', command=self.generate_strategy)
-        # strategy_menu.add_command(label='生成阵容', command=self.import_strategy)
-        # strategy_menu.add_command(label='导出', command=self.export_strategy)
-        # strategy_menu.add_command(label='刷新', command=self.refresh_strategy)
+        strategy_menu.add_command(label='导入', command=self.import_strategy_from_file)
+        strategy_menu.add_command(label='导出', command=self.export_strategy)
+        strategy_menu.add_command(label='刷新', command=self.refresh_strategy)
         strategy_menu.add_separator()
+        # TODO
         strategies = strategy.all()
         for one_strategy in strategies:
             if one_strategy.name == "默认":
                 continue
             strategy_menu.add_command(
-                label=one_strategy.name, command=lambda name=one_strategy.name: self.import_strategy_from_name(name))
+                label=one_strategy.name, command=lambda x=one_strategy.name: self.import_strategy_from_name(x))
+        win_main_menu.add_cascade(label="全部取消", command=self.reject_all)
+        win_main_menu.add_cascade(label="我全都要", command=self.select_all)
         win_main_menu.add_cascade(label="激活/冻结拿牌功能（快捷键：“F8 ”）",
                                   command=self.change_state_then_title)
         if self.is_win_topmost:
@@ -447,7 +407,7 @@ class MainGui(tk.Tk):
             self.character_check_button[character_name] = character_check_button
             character_img_item = tk.Label(
                 item_frame,
-                bg=bg_color,
+                bg="black",
                 image=self.head_img[character_name],
                 borderwidth=0,
                 relief='ridge',
@@ -509,8 +469,6 @@ class MainGui(tk.Tk):
         )
         title_frame.grid_propagate(0)
         title_frame.grid(
-            row=0,
-            column=0,
             sticky="W"
         )
         title1 = tk.Button(
@@ -550,115 +508,55 @@ class MainGui(tk.Tk):
         title4.grid(row=0, column=3)
         self.win_temporary_strategy_titles["thinking"] = title4
         # 滚动容器窗口
-        e_container_frame = ScrollableFrame(
-            outline_frame,
-            highlightthickness=0,
-            width=width,
-            height=height,
-            bg=bg
-        )
-        e_container_frame.grid_propagate(0)
-        e_container_frame.grid(
-            row=1,
-            column=0,
-            sticky="W"
-        )
+        # container_frame = tk.Frame(
+        #     outline_frame,
+        #     bg=bg,
+        #     width=width,
+        #     height=height,
+        # )
+        # container_frame.grid_propagate(0)
+        # container_frame.grid()
         # 前期阵容窗口
-        early_lineup_frame = tk.Frame(
-            e_container_frame.scrollable_frame,
+        self.rowconfigure(0, weight=1)
+        self.columnconfigure(0, weight=1)
+        container_frame = outline_frame
+        early_lineup_frame = ScrollableFrame(
+            container_frame,
             width=width,
             height=height,
-            bg=bg
-        )
-        early_lineup_frame.grid()
-        # 滚动容器窗口
-        m_container_frame = ScrollableFrame(
-            outline_frame,
             highlightthickness=0,
-            width=width,
-            height=height,
             bg=bg
         )
-        m_container_frame.grid_propagate(0)
-        m_container_frame.grid(
-            row=1,
-            column=0,
-            sticky="W"
-        )
+        # self.hide_win(early_lineup_frame)
         # 中期阵容窗口
-        mid_term_lineup_frame = tk.Frame(
-            m_container_frame.scrollable_frame,
+        mid_term_lineup_frame = ScrollableFrame(
+            container_frame,
             width=width,
             height=height,
             highlightthickness=0,
             bg=bg
-        )
-        mid_term_lineup_frame.grid()
-        # 滚动容器窗口
-        f_container_frame = ScrollableFrame(
-            outline_frame,
-            highlightthickness=0,
-            width=width,
-            height=height,
-            bg=bg
-        )
-        f_container_frame.grid_propagate(0)
-        f_container_frame.grid(
-            row=1,
-            column=0,
-            sticky="W"
         )
         # 后期阵容窗口
-        final_lineup_frame = tk.Frame(
-            f_container_frame.scrollable_frame,
+        final_lineup_frame = ScrollableFrame(
+            container_frame,
             width=width,
             height=height,
             highlightthickness=0,
             bg=bg
-        )
-        final_lineup_frame.grid()
-        # 滚动容器窗口
-        t_container_frame = ScrollableFrame(
-            outline_frame,
-            highlightthickness=0,
-            width=width,
-            height=height,
-            bg=bg
-        )
-        t_container_frame.grid_propagate(0)
-        t_container_frame.grid(
-            row=1,
-            column=0,
-            sticky="W"
         )
         # 运营思路窗口
-        thinking_frame = tk.Frame(
-            t_container_frame.scrollable_frame,
+        thinking_frame = ScrollableFrame(
+            container_frame,
             width=width,
             height=height,
             highlightthickness=0,
             bg=bg
         )
-        thinking_frame.grid()
-        self.win_temporary_strategy_content_frames["early_lineup"]["container"] = e_container_frame
-        self.win_temporary_strategy_content_frames["mid_term_lineup"]["container"] = m_container_frame
-        self.win_temporary_strategy_content_frames["final_lineup"]["container"] = f_container_frame
-        self.win_temporary_strategy_content_frames["thinking"]["container"] = t_container_frame
+
         self.win_temporary_strategy_content_frames["early_lineup"]["main"] = early_lineup_frame
         self.win_temporary_strategy_content_frames["mid_term_lineup"]["main"] = mid_term_lineup_frame
         self.win_temporary_strategy_content_frames["final_lineup"]["main"] = final_lineup_frame
         self.win_temporary_strategy_content_frames["thinking"]["main"] = thinking_frame
-
-    def _on_mousewheel(self, event, canvas, frame):
-        height = canvas.winfo_height()
-        item_height = frame.winfo_height()
-        print(height, item_height)
-        if (item_height < height):
-            direction = 0
-        else:
-            direction = event.delta
-        migration = int(-1 * (direction / 120))
-        canvas.yview_scroll(migration, "units")
 
     def click_strategy_frame_title(self, target_title_name):
         bg_active = self.gui_config.default.win_temporary_strategy.title.bg.active
@@ -671,12 +569,12 @@ class MainGui(tk.Tk):
                 else:
                     self.lineup_focus = target_title_name
                     set_lineup_state(target_title_name)
+
             else:
                 self.win_temporary_strategy_titles[title_name].config(bg=bg_passive)
-                self.win_temporary_strategy_content_frames[title_name]["container"].grid_forget()
-                self.win_temporary_strategy_content_frames[title_name]["container"].state = False
-        self.win_temporary_strategy_content_frames[target_title_name]["container"].state = True
-        self.win_temporary_strategy_content_frames[target_title_name]["container"].grid()
+                self.win_temporary_strategy_content_frames[title_name]["main"].grid_forget()
+        self.win_temporary_strategy_content_frames[target_title_name]["main"].grid()
+        self.win_temporary_strategy_content_frames[target_title_name]["main"].update_idletasks()
         self.adapt_lineup_main()
 
     def adapt_lineup_main(self):
@@ -1273,7 +1171,7 @@ class MainGui(tk.Tk):
         # text_max_len = self.gui_config.default.win_temporary_strategy.item.text.max_len
         # 角色渲染区,当需要删除角色渲染时,删除item_frame,item_frame.destroy()
         item_frame = tk.Frame(
-            self.win_temporary_strategy_content_frames[lineup_name]["main"],
+            self.win_temporary_strategy_content_frames[lineup_name]["main"].scrollable_frame,
             width=item_width,
             height=item_height,
             bg=bg_color
@@ -1428,9 +1326,8 @@ class MainGui(tk.Tk):
                 if character_name in self.temporary_strategy["lineups"][self.lineup_focus]:
                     continue
                 else:
-                    self.character_check_button[character_name].invoke()
-                    # self.after(20 * i, lambda name=character_name: self.character_check_button[
-                    #     name].invoke())
+                    self.after(10 * i, lambda name=character_name: self.character_check_button[
+                        name].invoke())
         except:
             logger.critical("错误，批量任务执行失败，任务:select_all")
 
@@ -1443,17 +1340,18 @@ class MainGui(tk.Tk):
             character_list.reverse()
             i = 0
             for character_name in character_list:
-                self.character_check_button[character_name].invoke()
-                # i += 1
-                # self.after(20 * i, lambda name=character_name: self.character_check_button[
-                #     name].invoke())
+                i += 1
+                self.after(10 * i, lambda name=character_name: self.character_check_button[
+                    name].invoke())
         except:
             logger.critical("错误，批量任务执行失败，任务:reject_all")
 
     def switch_win_topmost(self):
         self.is_win_topmost = not self.is_win_topmost
         if self.is_win_topmost:
+            self.lift()
             self.attributes('-topmost', True)
+            self.win_temporary_strategy.lift()
             self.win_temporary_strategy.attributes('-topmost', True)
         else:
             self.attributes('-topmost', False)
@@ -1488,135 +1386,10 @@ class MainGui(tk.Tk):
         self.build_win_main_menu()
 
     def import_strategy_from_name(self, name):
-        self.reject_all()
-        self.load_temporary_strategy(name)
-        self.destroy_temporary_strategy_items()
-        self.build_strategy_items()
-
-    def import_strategy(self):
         pass
 
-    def generate_strategy(self):
-        if not self.win_new_strategy_name_entry:
-            width = self.gui_config.default.win_new_strategy_name.width
-            height = self.gui_config.default.win_new_strategy_name.height
-            title_height = self.gui_config.default.win_new_strategy_name.title.height
-            bg = self.gui_config.default.win_new_strategy_name.bg
-            fg = self.gui_config.default.win_new_strategy_name.fg
-            scn_w, scn_h = win32api.GetSystemMetrics(win32con.SM_CXSCREEN), win32api.GetSystemMetrics(
-                win32con.SM_CYSCREEN)
-            cen_x = (scn_w - width) / 2
-            cen_y = (scn_h - height) / 2
-            self.win_new_strategy_name.overrideredirect(True)
-            self.win_new_strategy_name.attributes('-topmost', True)
-            # self.win_new_strategy_name.resizable(0, 0)
-            g_conf = "%dx%d+%d+%d" % (width, height, cen_x, cen_y)
-            self.win_new_strategy_name.geometry(g_conf)
-            ft = tf.Font(family='仿宋', size=15, weight=tf.BOLD)
-            title_frame = tk.Frame(
-                self.win_new_strategy_name,
-                width=width,
-                height=title_height,
-                bg=bg
-            )
-            title_frame.grid_propagate(False)
-            title_frame.grid(
-                row=0,
-                column=0,
-                columnspan=2,
-                sticky="W"
-            )
-            tk.Label(
-                title_frame,
-                text='起个名字吧:',
-                font=ft,
-                bg=bg,
-                fg=fg
-            ).grid(
-                padx=10,
-                pady=10,
-            )
-            entry_frame = tk.Frame(
-                self.win_new_strategy_name,
-                width=width,
-                height=height / 4
-            )
-            entry_frame.grid_propagate(False)
-            entry_frame.grid(
-                row=1,
-                column=0,
-                columnspan=2
-            )
-            self.win_new_strategy_name_entry = tk.Entry(
-                entry_frame,
-                font=ft,
-                width=width,
-                fg="#f0d264"
-            )
-            self.win_new_strategy_name_entry.grid(
-                ipadx=5,
-                ipady=5,
-            )
-            tk.Button(
-                self.win_new_strategy_name,
-                text='确认',
-                font=ft,
-                # bg="#152030",
-                fg=bg,
-                command=lambda: self.generate_strategy_verify(True)
-            ).grid(
-                row=2,
-                column=0,
-                columnspan=1,
-                padx=10,
-                pady=10,
-            )
-            tk.Button(
-                self.win_new_strategy_name,
-                text='取消',
-                font=ft,
-                command=lambda: self.generate_strategy_verify(False)
-            ).grid(
-                row=2,
-                padx=10,
-                pady=10,
-                column=1,
-                columnspan=1,
-            )
-        self.show_win(self.win_new_strategy_name)
-
-    def generate_strategy_verify(self, verify):
-        if not verify:
-            self.win_new_strategy_name_entry.insert(0, "")
-        else:
-            if new_name := self.win_new_strategy_name_entry.get():
-                new_strategy_data = self.get_temporary_strategy_date()
-                new_strategy_data["name"] = new_name
-                strategy.record(new_strategy_data)
-                self.build_win_main_menu()
-        self.hide_win(self.win_new_strategy_name)
-
-    def get_lineup_data(self, lineup_name):
-        # return self.temporary_strategy["lineups"][lineup_name]._asdict()
-        cache_data = []
-        lineup_data = self.temporary_strategy["lineups"][lineup_name]
-        for character_name in lineup_data:
-            cache_data.append(
-                {
-                    "character": character_name,
-                    "equipment": lineup_data[character_name].equipment
-                }
-            )
-        return cache_data
-
-    def get_temporary_strategy_date(self):
-        temporary_strategy_data = {
-            "early_lineup": self.get_lineup_data("early_lineup"),
-            "mid_term_lineup": self.get_lineup_data("mid_term_lineup"),
-            "final_lineup": self.get_lineup_data("final_lineup"),
-            "thinking": "",
-        }
-        return temporary_strategy_data
+    def import_strategy_from_file(self, file_path=""):
+        pass
 
     def export_strategy(self):
         pass
@@ -1675,106 +1448,3 @@ class MainGui(tk.Tk):
             self.select_character_to_lineup(character)
         if not accept_character and character_in_lineup:
             self.reject_character_from_lineup(character)
-
-    def auth(self):
-        user_config = config_parser(config_init.user.path)
-        self.win_auth.attributes("-alpha", 0.9)
-        self.win_auth.iconbitmap(user_config.gui.common.icon.main.path)
-        self.win_auth.configure(background="#203040")
-        self.win_auth.title('请输入你的用户KEY')
-        self.win_auth.geometry('1020x220')
-        self.win_auth.resizable(width=False, height=False)
-        self.win_auth.geometry("+300+300")
-        # 画布放置图片
-        ft = tf.Font(family='仿宋', size=15, weight=tf.BOLD)
-        # 标签 用Key
-        tk.Label(
-            self.win_auth,
-            text='用户Key:',
-            font=ft,
-            bg="#203040",
-            fg="#f0d264"
-        ).grid(
-            column=1,
-            row=1,
-            ipadx=10,
-            ipady=10
-        )
-        # key输入框
-        entry = tk.Entry(self.win_auth,
-                         font=ft,
-                         width=80,
-                         bg="#406080",
-                         fg="#f0d264"
-                         )
-        auth_entry = entry
-        entry.grid(
-            column=2,
-            row=1,
-            ipadx=5,
-            ipady=5
-        )
-
-        def auto_auth():
-            auth_file_path = user_config.auth.user_info.path
-            auth_user_info = read_all(auth_file_path)
-            auth_entry.insert(0, auth_user_info)
-
-        auto_auth()
-
-        def auth():
-            auth_url_target = user_config.auth.url
-            auth_user_info = auth_entry.get()
-            auth_url = auth_url_target + auth_user_info
-            res = requests.get(auth_url)
-            if res.text == 'OK':
-                self.auth_success()
-            else:
-                msgBox.showwarning('无效KEY', '你输入的KEY为无效KEY')
-
-        tk.Button(
-            self.win_auth,
-            text='进入程序',
-            font=ft,
-            bg="#152030",
-            fg="#f0d264",
-            command=auth
-        ).grid(
-            column=1,
-            row=2,
-            ipadx=3,
-            ipady=5,
-        )
-        # 提示信息
-        tk.Label(
-            self.win_auth,
-            text='重要提示！！！：使用1600*900分辨率、无边框模式进行游戏才可放心食用TFTHelper',
-            font=ft,
-            fg='#DC143C',
-            bg="#203040"
-        ).grid(
-            column=2,
-            # columnspan=2,
-            row=2,
-            ipadx=10,
-            ipady=10,
-            sticky=tk.W
-        )
-        tk.Label(
-            self.win_auth,
-            text='特别提示！！！：本程序完全免费！本程序的初衷是为了让大家更好的玩游戏，为了防止不法分子将本软件商用特加上验证用户Key功能，Key加群获取，本程序官方QQ群为893998223，请每一位使用者都加群，一起吹牛，一起下棋，key每隔一段时间就会更新，另外每隔一段时间本程序大版本也会更新，key和新版本程序加群获得，如果你是通过付费方式获取的此软件，请向你使用的平台进行举报该商家，最后，祝大家把把吃鸡!',
-            wraplength=980,
-            justify='left',
-            font=ft,
-            fg="#f0d264",
-            bg="#203040"
-        ).grid(
-            column=1,
-            columnspan=2,
-            row=3,
-            ipadx=10,
-            ipady=10,
-            sticky=tk.W
-        )
-        self.win_auth.protocol("WM_DELETE_WINDOW", self.quit)
-        self.show_win(self.win_auth)

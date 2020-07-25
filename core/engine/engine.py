@@ -1,91 +1,109 @@
 from core.winApi.winApi import get_win_cap, get_win_handle, get_win_pos, mouse_left_click
 import time
-from core.state.state import get_state
+from core.state.state import get_state, get_lineup_state
 from lib import logger
+from lib import config_parser, config_init
+from core.game_components import default_lineup
+from core.game_components import character as character_controller
+from core.image.image import com_sim_text_img
+
+engine_config = config_parser(config_init.engine.path)
+
+targets_area = []
+for x, y in zip(engine_config.default.x, engine_config.default.y):
+    targets_area.append(
+        (x, y, x + engine_config.default.w, y + engine_config.default.h)
+    )
 
 
-def getCandidates(handle):
-    winCap = get_win_cap(handle)
-    if winCap is None:
-        return None
-    num = config[config["engine.default"]]["num"]
-    x_align = config[config["engine.default"]]['x_align']
-    y_align = config[config["engine.default"]]['y_align']
-    x_max = x_align[num - 1][1]
-    y_max = y_align[num - 1][1]
-    if winCap.shape[0] < y_max or winCap.shape[1] < x_max:
-        return None
-    caps = []
-    for i in range(num):
-        cap = winCap[
-              y_align[i][0]:y_align[i][1],
-              x_align[i][0]:x_align[i][1]
-              ]
-        caps.append(cap)
-    return caps
+class Worker:
+    target_window_name = engine_config.target_window
+    ttf_path = engine_config.ttf_path
+    target_win_handle = None
+    lineups_index = {
+        "early_lineup": "default.lineup.默认_early_lineup",
+        "mid_term_lineup": "default.lineup.默认_mid_term_lineup",
+        "final_lineup": "default.lineup.默认_final_lineup",
+    }
+    targets_area = targets_area
 
+    def __init__(self):
+        pass
 
-def getTargets():
-    try:
-        return pkl_load(config["engine.path_selected"])
-    except:
-        return []
+    @staticmethod
+    def get_target_characters_name() -> [str]:
+        # 用于还原状态
+        pre_index = default_lineup.index
+        default_lineup.index = Worker.lineups_index[get_lineup_state()]
+        characters = default_lineup.all()
+        default_lineup.index = pre_index
+        names = []
+        for character in characters:
+            names.append(character.character.split().pop())
+        return names
 
+    @staticmethod
+    def find_target_character_in_window(frame) -> 0 or 1 or 2 or 3 or 4:
+        target_characters_name = Worker.get_target_characters_name()
+        character_name_images = Worker.get_target_character_name_images(frame)
+        which = []
+        i = -1
+        for character_name_image in character_name_images:
+            i += 1
+            for target_character_name in target_characters_name:
+                score = com_sim_text_img(
+                    character_name_image,
+                    target_character_name,
+                    engine_config.default.h,
+                    Worker.ttf_path,
+                    (engine_config.default.w, engine_config.default.h)
+                )
+                if score > 0.65:
+                    which.append(i)
+                    logger.debug("成功，已匹配，角色名:{},位置:{},score:{}".format(target_character_name, which, score))
+        return set(which)
 
-def shot(i, handle):
-    loc = get_win_pos(handle)
-    if loc == None:
-        return None
-    x = config[config["engine.default"]]["nw_relative_center"][0][i] + loc[0]
-    y = config[config["engine.default"]]["nw_relative_center"][1][i] + loc[1]
-    mouse_left_click(x, y)
+    @staticmethod
+    def click_target_character_in_window(which: 0 or 1 or 2 or 3 or 4) -> None:
+        for loc in which:
+            mouse_left_click(engine_config.default.x[loc], engine_config.default.y[loc])
 
+    @staticmethod
+    def get_window_handle() -> int or None:
+        return get_win_handle(Worker.target_window_name)
 
+    @staticmethod
+    def get_target_win_frame():
+        return get_win_cap(Worker.target_win_handle)
 
+    @staticmethod
+    def get_target_character_name_images(frame):
+        images = []
+        for area in Worker.targets_area:
+            images.append(frame.crop(area))
+        return images
 
-def doIt(handle, characterHandle):
-    candidates = getCandidates(handle)
-    if candidates is None:
-        return None
-    targets = getTargets()
-    if targets is None:
-        return None
-    if not targets:
-        log(" 文件或许正在被占用,等待... ")
-        time.sleep(0.01)
-        return True
-    for i in range(len(candidates)):
-        for target in targets:
-            targetImage = characterHandle.resource[target].characterImg
-            if imgCompare(targetImage, candidates[i]) == True:
-                shot(i, handle)
-    return True
+    @staticmethod
+    def get_current_state() -> 0 or 1:
+        return get_state()
 
-
-def adjustWindow(handle):
-    return None
-    # TODO
-    # (x1, y1, x2, y2) = get_win_pos(handle)
-    # w = x2 - x1
-    # h = y2 - y1
-    # if w > 1600 or h > 900:
-    #     return
-    # setWindowPos(handle, (300, 250, w, h))
-
-
-def worker():
-    characterHandle = loadCharacterHandle(config["resource.path_characters"])
-    handle = get_win_handle(config["engine.target_window"])
-    print(666)
-    while True:
-        time.sleep(0.01)
-        if getState() == 0:
-            continue
-        if not handle:
-            log(" 没有检测到目标窗口 ")
-            time.sleep(3)
-            handle = get_win_handle(config["engine.target_window"])
-        else:
-            flag = doIt(handle, characterHandle)
-            if not flag:
-                handle = None
+    @staticmethod
+    def morning() -> None:
+        Worker.handle = Worker.get_window_handle()
+        while True:
+            # 工作状态是否激活
+            if not Worker.get_current_state():
+                time.sleep(0.5)
+                continue
+            # 是否能找到游戏窗口
+            if not Worker.handle:
+                time.sleep(5)
+                Worker.target_win_handle = Worker.get_window_handle()
+                continue
+            # 对屏幕上的游戏窗口区域进行截取
+            # 若抓取不到则判断目标窗口无效，将Worker的对应handle置空
+            if not (frame := Worker.get_target_win_frame()):
+                Worker.target_win_handle = Worker.get_window_handle()
+                continue
+            which = Worker.find_target_character_in_window(frame)
+            Worker.click_target_character_in_window(which)

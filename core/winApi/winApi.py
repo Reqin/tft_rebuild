@@ -1,8 +1,10 @@
 import win32api
 import win32con
 import win32gui
-# from core.image.image import cutWin
 import time
+from PIL.ImageGrab import grab
+
+_POS = (0, 0, 0, 0)
 
 
 def get_win_handle(target):
@@ -10,8 +12,8 @@ def get_win_handle(target):
     return win32gui.FindWindow(0, target)
 
 
-def set_win_pos(handle, pos):
-    win32gui.SetWindowPos(handle, win32con.HWND_TOPMOST, pos[0], pos[1], pos[2], pos[3], win32con.SWP_SHOWWINDOW)
+def set_win_pos(handle, pos: _POS):
+    win32gui.SetWindowPos(handle, win32con.HWND_TOPMOST, *pos, win32con.SWP_SHOWWINDOW)
 
 
 def get_win_pos(handle):
@@ -25,7 +27,7 @@ def get_win_cap(handle):
     loc = get_win_pos(handle)
     if loc is None:
         return None
-    return cutWin(loc)
+    return grab(loc)
 
 
 def get_cursor_pos():

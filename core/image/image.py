@@ -3,8 +3,6 @@ import numpy as np
 import os
 
 
-# from lib import logger
-
 def load_img(path):
     return Image.open(path)
 
@@ -24,25 +22,26 @@ def com_sim(img1, img2):
     return op_r
 
 
-def com_sim_text_img(img, text, font_size, ttf_path):
+def com_sim_text_img(img, text, font_size, ttf_path, canvas_size=()):
     img = get_clean_img(img.convert("L"))
-    img_text = draw_text(text, ttf_path, font_size).convert("1")
+    img_text = draw_text(text, ttf_path, font_size, canvas_size=canvas_size).convert("1")
     res1 = com_sim(img_text, img)
-    img_text = draw_text(text, ttf_path, font_size, y_off=-1).convert("1")
+    img_text = draw_text(text, ttf_path, font_size, y_off=-1, canvas_size=canvas_size).convert("1")
     res2 = com_sim(img_text, img)
-    return max(res1, res2)
+    img_text = draw_text(text, ttf_path, font_size, y_off=1, canvas_size=canvas_size).convert("1")
+    res3 = com_sim(img_text, img)
+    return max(res1, res2, res3)
 
 
 # 绘图
 def draw_text(img_text, ttf_path, font_size, x_off=0, y_off=0, canvas_size=()):
     if canvas_size == ():
-        text_len = len(img_text)
-        canvas_size = (font_size * text_len, font_size)
+        canvas_size = (font_size * len(img_text), font_size)
     font = ImageFont.truetype(ttf_path, font_size)
     img = Image.new("RGB", canvas_size, (0, 0, 0))
     draw = ImageDraw.Draw(img)
     draw.text((x_off, y_off), img_text, font=font, fill=(255, 255, 255, 255))
-    return img
+    return img.convert("1")
 
 
 def get_clean_img(img, threshold=200):

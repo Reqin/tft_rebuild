@@ -21,6 +21,7 @@ from core.filePipe.pipe import __clear as clear
 from lib import logger
 from functools import wraps
 from lib import config_init, config_parser
+import shutil
 
 
 def is_empty_table(func):
@@ -383,6 +384,14 @@ class DB:
     def init_table(self, index, fields, table=None):
         del index
         return table.create(fields)
+
+    def copy(self, index_pairs):
+        for index_pair in index_pairs:
+            source_table = get_table(self, index_pair[0])
+            target_table = get_table(self, index_pair[1])
+            shutil.copy(source_table.path, target_table.path)
+        self.__load_data()
+        return
 
 
 db_config = config_parser(config_init.db.path)

@@ -71,6 +71,9 @@ class Component:
         record = record._make(record_dict.values())
         return record
 
+    def copy(self,index_pairs):
+        return default_db_engine.copy(index_pairs)
+
     def parse_records(self, records):
         cache_records = []
         for record in records:
@@ -81,7 +84,8 @@ class Component:
     def get_by_filed(self, data):
         field, value = data.popitem()
         records = self.pure_get_by_filed(field, value)
-        records = self.parse_records(records)
+        if records:
+            records = self.parse_records(records)
         return records
 
     @json_field_encode
@@ -119,7 +123,10 @@ class Component:
         return self.parse_records(records)
 
     def get(self, value):
-        return self.get_by_filed({self.major_field: value}).pop()
+        records = self.get_by_filed({self.major_field: value})
+        if isinstance(records, list):
+            return records.pop()
+        return False
 
     def pure_get(self, value):
         return self.pure_get_by_filed(self.major_field, value).pop()
@@ -128,7 +135,7 @@ class Component:
         records = default_db_engine.retrieve(self.index, field, value)
         if not records:
             logger.info("执行完毕，没有查询到记录,参数:{}".format({field: value}))
-            return [False]
+            return False
         return records
 
     def lose(self, major_filed_value):

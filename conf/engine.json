@@ -1,75 +1,27 @@
 {
   "target_window_bak": "tft",
   "target_window": "League of Legends (TM) Client",
-  "path_state": "./cache/state",
-  "path_selected": "./cache/selected",
   "ttf_path": "storage/font/simhei.ttf",
   "img_standard_size": {
     "x": 13,
     "y": 13
   },
-  "default": "engine.1600_900",
-  "1600_900": {
-    "num": 5,
-    "x_align": [
-      [
-        402,
-        557
-      ],
-      [
-        569,
-        724
-      ],
-      [
-        736,
-        891
-      ],
-      [
-        904,
-        1059
-      ],
-      [
-        1073,
-        1228
-      ]
+  "default": {
+    "x": [
+      406,
+      573,
+      740,
+      908,
+      1077
     ],
-    "y_align": [
-      [
-        775,
-        890
-      ],
-      [
-        775,
-        890
-      ],
-      [
-        775,
-        890
-      ],
-      [
-        775,
-        890
-      ],
-      [
-        775,
-        890
-      ]
+    "y": [
+      871,
+      871,
+      871,
+      871,
+      871
     ],
-    "nw_relative_center": [
-      [
-        450,
-        645,
-        810,
-        980,
-        1150
-      ],
-      [
-        832,
-        832,
-        832,
-        832,
-        832
-      ]
-    ]
+    "w": 91,
+    "h": 13
   }
 }

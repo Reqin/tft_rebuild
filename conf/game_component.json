@@ -29,7 +29,6 @@
   },
   "temporary_strategy": {
     "type": "RECORD",
-    "index": "default.strategy",
-    "record_index": "默认"
+    "major_filed_value": "默认"
   }
 }

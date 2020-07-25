@@ -1,7 +1,7 @@
 from .spider import Spider
 from lib import logger
 from selenium.webdriver.common.by import By
-from core.game_components import strategy
+from core.game_components import strategy as strategy_controller
 
 
 class StrategySpider(Spider):
@@ -169,8 +169,8 @@ class StrategySpider(Spider):
             print(strategy_data["final_lineup"])
             print(strategy_data["final_lineup"][0])
             strategy_data["thinking"] = thinking
-
-            strategy.record(strategy_data)
+            assert False
+            strategy_controller.record(strategy_data)
 
             back_button = strategy.find_element_by_class_name("page-btn-title")
             back_button.click()

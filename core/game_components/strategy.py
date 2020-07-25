@@ -27,6 +27,21 @@ class Strategy(Component):
         self.index = config.index
         logger.debug(self.index)
 
+    @staticmethod
+    def copy_strategy(source, target):
+        source_early_lineup_index = source.early_lineup
+        source_mid_term_lineup_index = source.mid_term_lineup
+        source_final_lineup_index = source.final_lineup
+        target_early_lineup_index = target.early_lineup
+        target_mid_term_lineup_index = target.mid_term_lineup
+        target_final_lineup_index = target.final_lineup
+        strategy.copy([
+            [source_early_lineup_index, target_early_lineup_index],
+            [source_mid_term_lineup_index, target_mid_term_lineup_index],
+            [source_final_lineup_index, target_final_lineup_index]
+        ])
+        return
+
     def record(self, strategy):
         assert isinstance(strategy, dict) and strategy.get(self.major_field, False), "契约错误"
         strategy_data = dict()
@@ -39,8 +54,6 @@ class Strategy(Component):
                 data = lineup_index
             else:
                 data = strategy.get(field, "")
-                if field == "thinking":
-                    data = json.dumps(data, ensure_ascii=False)
             strategy_data[field] = data
         self.new(strategy_data)
 

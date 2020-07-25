@@ -100,7 +100,7 @@
         "pady": 5,
         "alpha": 0.8,
         "title": {
-          "width": 230,
+          "width": 240,
           "height": 35,
           "bg": {
             "active": "#0f0f0f",
@@ -248,6 +248,15 @@
         "bg_color": {
           "default": "#0F1923"
         }
+      },
+      "win_new_strategy_name": {
+        "width": 300,
+        "height": 120,
+        "title":{
+          "height": 40
+        },
+        "bg": "#405060",
+        "fg": "#f0d264"
       }
     },
     "1920_1080": {

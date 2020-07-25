@@ -14,3 +14,11 @@ def set_state(state):
 
 def get_state():
     return default_db_engine.retrieve(__index, __major_key, __name).pop()[1]
+
+
+def set_lineup_state(lineup_name):
+    return default_db_engine.update(__index, [__major_key, "lineup"], {"state": lineup_name})
+
+
+def get_lineup_state():
+    return default_db_engine.retrieve(__index, __major_key, "lineup").pop()[1]
