@@ -4,15 +4,14 @@ from core.state.state import get_state, get_lineup_state
 from lib import logger
 from lib import config_parser, config_init
 from core.game_components import default_lineup
-from core.game_components import character as character_controller
 from core.image.image import com_sim_text_img
 
 engine_config = config_parser(config_init.engine.path)
 
 targets_area = []
-for x, y in zip(engine_config.default.x, engine_config.default.y):
+for __x, __y in zip(engine_config.default.x, engine_config.default.y):
     targets_area.append(
-        (x, y, x + engine_config.default.w, y + engine_config.default.h)
+        (__x, __y, __x + engine_config.default.w, __y + engine_config.default.h)
     )
 
 
@@ -26,9 +25,6 @@ class Worker:
         "final_lineup": "default.lineup.默认_final_lineup",
     }
     targets_area = targets_area
-
-    def __init__(self):
-        pass
 
     @staticmethod
     def get_target_characters_name() -> [str]:
@@ -61,12 +57,18 @@ class Worker:
                 if score > 0.65:
                     which.append(i)
                     logger.debug("成功，已匹配，角色名:{},位置:{},score:{}".format(target_character_name, which, score))
-        return set(which)
+                    break
+        return which
 
     @staticmethod
     def click_target_character_in_window(which: 0 or 1 or 2 or 3 or 4) -> None:
+        win_loc = get_win_pos(Worker.target_win_handle)
+        if not win_loc:
+            return
         for loc in which:
-            mouse_left_click(engine_config.default.x[loc], engine_config.default.y[loc])
+            x = engine_config.default.x[loc] + win_loc[0]
+            y = engine_config.default.y[loc] + win_loc[1]
+            mouse_left_click(x, y)
 
     @staticmethod
     def get_window_handle() -> int or None:
@@ -91,6 +93,7 @@ class Worker:
     def morning() -> None:
         Worker.handle = Worker.get_window_handle()
         while True:
+            time.sleep(0.1)
             # 工作状态是否激活
             if not Worker.get_current_state():
                 time.sleep(0.5)

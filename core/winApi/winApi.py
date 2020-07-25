@@ -12,8 +12,8 @@ def get_win_handle(target):
     return win32gui.FindWindow(0, target)
 
 
-def set_win_pos(handle, pos: _POS):
-    win32gui.SetWindowPos(handle, win32con.HWND_TOPMOST, *pos, win32con.SWP_SHOWWINDOW)
+# def set_win_pos(handle, pos: _POS):
+#     win32gui.SetWindowPos(handle, win32con.HWND_TOPMOST, *pos, win32con.SWP_SHOWWINDOW)
 
 
 def get_win_pos(handle):
