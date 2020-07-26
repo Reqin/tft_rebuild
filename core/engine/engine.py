@@ -5,6 +5,7 @@ from lib import logger
 from lib import config_parser, config_init
 from core.game_components import default_lineup
 from core.image.image import com_sim_text_img
+import keyboard
 
 engine_config = config_parser(config_init.engine.path)
 
@@ -25,6 +26,7 @@ class Worker:
         "final_lineup": "default.lineup.默认_final_lineup",
     }
     targets_area = targets_area
+    busy = False
 
     @staticmethod
     def get_target_characters_name() -> [str]:
@@ -54,7 +56,7 @@ class Worker:
                     Worker.ttf_path,
                     (engine_config.default.w, engine_config.default.h)
                 )
-                if score > 0.65:
+                if score > 0.95:
                     which.append(i)
                     logger.debug("成功，已匹配，角色名:{},位置:{},score:{}".format(target_character_name, which, score))
                     break
@@ -90,23 +92,40 @@ class Worker:
         return get_state()
 
     @staticmethod
-    def morning() -> None:
+    def work():
+        # 工作状态是否激活
+        if not Worker.get_current_state():
+            logger.info("状态未激活，返回")
+            return
+        # 是否能找到游戏窗口
         Worker.handle = Worker.get_window_handle()
-        while True:
-            time.sleep(0.1)
-            # 工作状态是否激活
-            if not Worker.get_current_state():
-                time.sleep(0.5)
-                continue
-            # 是否能找到游戏窗口
-            if not Worker.handle:
-                time.sleep(5)
-                Worker.target_win_handle = Worker.get_window_handle()
-                continue
-            # 对屏幕上的游戏窗口区域进行截取
-            # 若抓取不到则判断目标窗口无效，将Worker的对应handle置空
-            if not (frame := Worker.get_target_win_frame()):
-                Worker.target_win_handle = Worker.get_window_handle()
-                continue
-            which = Worker.find_target_character_in_window(frame)
+        if not Worker.handle:
+            logger.warning("未找到目标窗口，返回")
+            time.sleep(5)
+            return
+        if not (frame := Worker.get_target_win_frame()):
+            logger.warning("未获取到窗口画面，返回")
+            time.sleep(5)
+            Worker.target_win_handle = Worker.get_window_handle()
+            return
+        # 开始识别
+        Worker.busy = True
+        which = Worker.find_target_character_in_window(frame)
+        Worker.busy = False
+        # 对目标进行拾取
+        for i in range(2):
             Worker.click_target_character_in_window(which)
+
+    @staticmethod
+    def d_work():
+        logger.warning("d WORK")
+        Worker.work()
+        time.sleep(0.1)
+        Worker.work()
+
+    @staticmethod
+    def morning() -> None:
+        keyboard.add_hotkey("d",Worker.d_work)
+        while True:
+            time.sleep(3)
+            Worker.work()

@@ -1,8 +1,10 @@
+# encoding:utf8
 import os
 import sys
 
-os.chdir("../")
+# os.chdir("../")
 path = os.getcwd()
+
 sys.path.append(path)
 
 if __name__ == "__main__":

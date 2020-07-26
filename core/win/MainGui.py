@@ -1,8 +1,6 @@
 # coding:utf8
 import os
 import time
-import PyHook3
-import pythoncom
 import tkinter as tk
 import tkinter.messagebox as msgBox
 import requests
@@ -21,6 +19,7 @@ from core.winApi import get_cursor_pos
 import tkinter.font as tf
 import win32api, win32con
 from core.filePipe.pipe import read_all
+import keyboard
 
 
 def start_main_window():
@@ -171,6 +170,9 @@ class MainGui(tk.Tk):
         self.show_win(self)
         # 显示当前阵容窗口
         self.show_win(self.win_temporary_strategy)
+        # 监听键盘
+        keyboard.add_hotkey("f8", self.change_state_then_title)
+        keyboard.add_hotkey("f11", self.switch_win_topmost)
 
     def load_resource(self):
         self.load_characters()
@@ -283,8 +285,6 @@ class MainGui(tk.Tk):
         self.build_win_equipment_info()
         # 切换到最终阵容界面
         self.click_strategy_frame_title("final_lineup")
-        # 监听键盘
-        # self.listenKeyboard()
 
     def destroy_temporary_strategy_items(self):
         for item in self.win_temporary_strategy_content_frames["early_lineup"]["items"].values():
@@ -1621,29 +1621,6 @@ class MainGui(tk.Tk):
     def export_strategy(self):
         pass
 
-    # 键盘事件开始
-    def listenKeyboard(self):
-        def ifDel():
-            hm = PyHook3.HookManager()
-            hm.KeyDown = self.keyBoardEvent
-            hm.HookKeyboard()
-            pythoncom.PumpMessages()
-
-        t1 = Thread(target=ifDel)
-        t1.setDaemon(True)
-        t1.start()
-
-    def keyBoardEvent(self, key):
-        if str(key) == 'Key.f8':
-            self.change_state_then_title()
-        if str(key) == 'Key.f9':
-            self.reject_all()
-        if str(key) == 'Key.f10':
-            self.trigger_character_button_all()
-        if str(key) == 'Key.f11':
-            self.top_down()
-
-    # 键盘事件结束
     def select_character_to_lineup(self, character):
         lineup_index = self.lineup_index[self.lineup_focus]
         ally = self.lineup_get_ally(lineup_index, character)
@@ -1682,7 +1659,7 @@ class MainGui(tk.Tk):
         self.win_auth.iconbitmap(user_config.gui.common.icon.main.path)
         self.win_auth.configure(background="#203040")
         self.win_auth.title('请输入你的用户KEY')
-        self.win_auth.geometry('1020x220')
+        self.win_auth.geometry('1020x240')
         self.win_auth.resizable(width=False, height=False)
         self.win_auth.geometry("+300+300")
         # 画布放置图片
@@ -1762,7 +1739,7 @@ class MainGui(tk.Tk):
         )
         tk.Label(
             self.win_auth,
-            text='特别提示！！！：本程序完全免费！本程序的初衷是为了让大家更好的玩游戏，为了防止不法分子将本软件商用特加上验证用户Key功能，Key加群获取，本程序官方QQ群为893998223，请每一位使用者都加群，一起吹牛，一起下棋，key每隔一段时间就会更新，另外每隔一段时间本程序大版本也会更新，key和新版本程序加群获得，如果你是通过付费方式获取的此软件，请向你使用的平台进行举报该商家，最后，祝大家把把吃鸡!',
+            text='用法：在你按下d键的时候程序自动识别你想要的英雄并向你提示\n特别提示！！！：本程序完全免费！本程序的初衷是为了让大家更好的玩游戏，为了防止不法分子将本软件商用特加上验证用户Key功能，Key加群获取，本程序官方QQ群为893998223，请每一位使用者都加群，一起吹牛，一起下棋，key每隔一段时间就会更新，另外每隔一段时间本程序大版本也会更新，key和新版程序加群获得，如果你是通过付费方式获取的此软件，请向你使用的平台进行举报该商家，最后，祝大家玩得开心!',
             wraplength=980,
             justify='left',
             font=ft,
